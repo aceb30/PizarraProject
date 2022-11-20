@@ -25,3 +25,5 @@ Supongo que será otro panel el que contenga estos botones > clase Botones
 Acceder, guardar (automático) y borrar las pizarras archivadas es algo que habrá que descubrir cómo hacer
 
 Elementos dentro de pizarra: Aún no sé si serán Nested Panels u otra forma (?) Lo raro es ver cómo se haría para modificar tamaños, o si será algo inmodificable una vez añadido uno. También sería conveniente poder cambiarle la fuente a la letra. 
+
+PRIMERA UPDATE: Lo mejor sería que al apretar los botones añadidos de borrar y editar la barra cambie. Así durante el modo editar aparecen las herramientas para ello y en el modo borrar lo mismo de forma equivalente. Para ello será conveniente usar otro panel lo más probablemente
