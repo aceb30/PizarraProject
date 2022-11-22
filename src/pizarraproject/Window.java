@@ -1,6 +1,6 @@
 
 package pizarraproject;
-
+import GUIControls.*;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -15,14 +15,14 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
 
-public class Window extends JFrame implements ActionListener {
+public class Window extends JFrame {
     private Pizarra pizarra;
     private Barra barra;
-    private JMenuItem load;
-    private JMenuItem save;
-    private JMenuItem delete;
+   
+    private MenuBar menu; 
+    
     public Window() throws IOException{
-        barra = new Barra();
+        barra = new Barra(this);
         pizarra = new Pizarra();
   
         this.setLayout(new BorderLayout());
@@ -36,45 +36,18 @@ public class Window extends JFrame implements ActionListener {
         this.setIconImage(image.getImage());
         this.getContentPane().setBackground(new Color(126, 114, 159));
         
-        JMenuBar menu = new JMenuBar();
-        
-        JMenu Archivo = new JMenu("Archivo");
-        
-        load = new JMenuItem("Cargar");
-        save = new JMenuItem("Guardar PDF");
-        delete = new JMenuItem("Borrar Archivo");
-        
-        load.addActionListener(this);
-        save.addActionListener(this);
-        delete.addActionListener(this);
-        
-        Archivo.add(load);
-        Archivo.add(save);
-        Archivo.add(delete);
-        
-        menu.add(Archivo);
-        
+        menu = new MenuBar();
+           
         this.setJMenuBar(menu);
         
-        this.add(barra, BorderLayout.WEST);
-        this.add(pizarra, BorderLayout.EAST);
+        this.getContentPane().add(barra, BorderLayout.WEST);
+        this.getContentPane().add(pizarra, BorderLayout.EAST);
         
         
         this.setVisible(true);
         
         
     }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if(e.getSource()==load){
-            System.out.println("Cargar");
-        }
-        if(e.getSource()==save){
-            System.out.println("Guardar");
-        }
-        if(e.getSource()==load){
-            System.out.println("Borrar");
-        }
-    }
 }
+
+  
