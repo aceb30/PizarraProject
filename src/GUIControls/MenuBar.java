@@ -15,6 +15,10 @@ public class MenuBar extends JMenuBar {
     private JFrame wind;
     private JMenuBar bar;
     public MenuBar(JFrame w){
+        
+        this.setPreferredSize(new Dimension(1300, 30));
+        this.setBackground(Color.red);
+        
         wind = w;
         bar = new JMenuBar();
         archivo = new JMenu();

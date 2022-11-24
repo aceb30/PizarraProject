@@ -41,7 +41,7 @@ public class Window extends JFrame {
         
        
 
-        
+        this.add(menu,BorderLayout.NORTH);
         this.add(barra, BorderLayout.WEST);
         this.add(pizarra, BorderLayout.EAST);
         
