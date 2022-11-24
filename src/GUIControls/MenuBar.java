@@ -12,8 +12,11 @@ public class MenuBar extends JMenuBar {
     private JMenuItem save;
     private JMenuItem delete;
     private JMenu archivo;
-    public MenuBar(){
-        
+    private JFrame wind;
+    private JMenuBar bar;
+    public MenuBar(JFrame w){
+        wind = w;
+        bar = new JMenuBar();
         archivo = new JMenu();
         load = new JMenuItem("Cargar");
         save = new JMenuItem("Guardar PDF");
@@ -46,8 +49,8 @@ public class MenuBar extends JMenuBar {
         archivo.add(save);
         archivo.add(delete);
         
-        this.add(archivo);
+        bar.add(archivo);
         
-        this.setVisible(true); 
+        wind.setJMenuBar(bar);
     }
 }

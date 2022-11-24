@@ -22,6 +22,8 @@ public class Window extends JFrame {
     private MenuBar menu; 
     
     public Window() throws IOException{
+        menu = new MenuBar(this);
+        
         barra = new Barra(this);
         pizarra = new Pizarra();
   
@@ -36,12 +38,12 @@ public class Window extends JFrame {
         this.setIconImage(image.getImage());
         this.getContentPane().setBackground(new Color(126, 114, 159));
         
-        menu = new MenuBar();
-           
-        this.setJMenuBar(menu);
         
-        this.getContentPane().add(barra, BorderLayout.WEST);
-        this.getContentPane().add(pizarra, BorderLayout.EAST);
+       
+
+        
+        this.add(barra, BorderLayout.WEST);
+        this.add(pizarra, BorderLayout.EAST);
         
         
         this.setVisible(true);
