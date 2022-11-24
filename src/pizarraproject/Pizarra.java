@@ -20,11 +20,17 @@ import javax.swing.event.MouseInputAdapter;
 public class Pizarra extends JPanel {
 
     private JLabel label;
+<<<<<<< HEAD
 
     public Pizarra() throws IOException {
         this.drawn = new ArrayList<Drawn>();
 
         this.setPreferredSize(new Dimension(1000, 600));
+=======
+    public Pizarra() throws IOException{
+        
+        this.setPreferredSize(new Dimension(1300, 600));
+>>>>>>> a432e4b1901029a9f489fa545eaf4b5a6fda7994
         this.setBackground(new Color(250, 250, 250));
         Listener listener = new Listener();
         this.addMouseListener(listener);

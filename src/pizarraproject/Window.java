@@ -21,6 +21,9 @@ public class Window extends JFrame {
    
     private MenuBar menu; 
     
+    //this.setLocale(null);
+    //super(null);
+    
     public Window() throws IOException{
         menu = new MenuBar(this);
         
@@ -38,10 +41,9 @@ public class Window extends JFrame {
         this.setIconImage(image.getImage());
         this.getContentPane().setBackground(new Color(126, 114, 159));
         
-        
-       
-
-        
+        menu.setBounds(0,0, 1300, 100);
+                               
+        this.add(menu,BorderLayout.NORTH);
         this.add(barra, BorderLayout.WEST);
         this.add(pizarra, BorderLayout.EAST);
         
