@@ -33,3 +33,5 @@ SEGUNDA UPDATE: Oki doki, entonces ahora tenemos que los modos borrar y editar s
 TERCERA UPDATE: Estamos de a poco ordenando los packages mejor, qué dolor de cabeza. Aún no logro hacer que la nueva implementación de la barra de arriba se vea.
 
 CUARTA UPDATE: Ahora quedan todos los botones y controles donde deben. Se han creado clases enteras para manejar los botones de cada modo, los botones de cambio de modo y los botones de la barra menú superior (que aún no logro hacer que reaparaezca luego de ese cambio)
+
+QUINTA UPDATE: Agregada funcion para dibujar en pantalla con clases separadas por trazo
