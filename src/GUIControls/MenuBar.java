@@ -16,8 +16,9 @@ public class MenuBar extends JMenuBar {
     private JMenuBar bar;
     public MenuBar(JFrame w){
         
-        this.setPreferredSize(new Dimension(1300, 30));
-        this.setBackground(Color.red);
+        this.setPreferredSize(new Dimension(800, 30));        
+        this.setBackground(new Color(125, 206, 160));
+        this.setLocale(null);
         
         wind = w;
         bar = new JMenuBar();
@@ -47,14 +48,16 @@ public class MenuBar extends JMenuBar {
                System.out.println("Borrar");
             }
         });
-      
-        
+                  
         archivo.add(load);
         archivo.add(save);
         archivo.add(delete);
         
         bar.add(archivo);
         
+        //bar.setBounds(0, 0, 100, 30);
+        
         wind.setJMenuBar(bar);
+        this.add(bar);
     }
 }

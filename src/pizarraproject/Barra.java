@@ -14,7 +14,9 @@ public class Barra extends JPanel{
     
     //GridBagConstraints gbc;
     public Barra(Window window_aux){
+        
         ventana = window_aux;
+        //this.setLocale(null);
         this.setLayout(new BorderLayout());
         //this.setLayout(new GridBagLayout());
         //gbc = new GridBagConstraints();

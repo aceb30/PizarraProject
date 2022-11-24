@@ -16,6 +16,7 @@ import javax.swing.JPanel;
 public class Pizarra extends JPanel{
     private JLabel label;
     public Pizarra() throws IOException{
+        
         this.setPreferredSize(new Dimension(1300, 600));
         this.setBackground(new Color(250, 250, 250));
         /* Tried to add image, need fixes.
