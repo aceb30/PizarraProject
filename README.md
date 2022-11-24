@@ -31,3 +31,5 @@ PRIMERA UPDATE: Lo mejor sería que al apretar los botones añadidos de borrar y
 SEGUNDA UPDATE: Oki doki, entonces ahora tenemos que los modos borrar y editar son nested panels dentro de la barra principal, se puede pasar entre ellos usando botones. Además, para el futuro manejo de archivos y multi pizarra se añadió una barra menú arriba para borrar, guardar y cargar cosas. Supongo que el siguiente reto es ir viendo cómo completar la interfaz y empezar a ya hablar de cómo será la manipulación básica de objetos en la pizarra: Poner cuadros y trazos se volverá una tarea escencial. 
 
 TERCERA UPDATE: Estamos de a poco ordenando los packages mejor, qué dolor de cabeza. Aún no logro hacer que la nueva implementación de la barra de arriba se vea.
+
+CUARTA UPDATE: Ahora quedan todos los botones y controles donde deben. Se han creado clases enteras para manejar los botones de cada modo, los botones de cambio de modo y los botones de la barra menú superior (que aún no logro hacer que reaparaezca luego de ese cambio)
