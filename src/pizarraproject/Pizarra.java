@@ -20,8 +20,6 @@ import javax.swing.event.MouseInputAdapter;
 public class Pizarra extends JPanel {
 
     private JLabel label;
-<<<<<<< HEAD
-
     public Pizarra() throws IOException {
         this.drawn = new ArrayList<Drawn>();
 
