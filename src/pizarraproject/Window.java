@@ -25,11 +25,12 @@ public class Window extends JFrame {
     //super(null);
     
     public Window() throws IOException{
-        menu = new MenuBar(this);
-        
+       
+        menu = new MenuBar(this);        
         barra = new Barra(this);
         pizarra = new Pizarra();
-  
+        
+        //this.setLocationRelativeTo(null);
         this.setLayout(new BorderLayout());
         
         this.setTitle("Pizarra Project");
@@ -39,15 +40,12 @@ public class Window extends JFrame {
         
         ImageIcon image = new ImageIcon("Board.png");
         this.setIconImage(image.getImage());
-        this.getContentPane().setBackground(new Color(126, 114, 159));
-        
-        menu.setBounds(0,0, 1300, 100);
+        this.getContentPane().setBackground(new Color(126, 114, 159));                
                                
-        this.add(menu,BorderLayout.NORTH);
+        //this.add(menu,BorderLayout.NORTH);
         this.add(barra, BorderLayout.WEST);
         this.add(pizarra, BorderLayout.EAST);
-        
-        
+                
         this.setVisible(true);
         
         

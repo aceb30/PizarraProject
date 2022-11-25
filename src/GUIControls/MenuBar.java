@@ -8,22 +8,25 @@ import javax.swing.*;
 
 
 public class MenuBar extends JMenuBar {
+    
+    private JMenuBar mb;
     private JMenuItem load;
     private JMenuItem save;
     private JMenuItem delete;
-    private JMenu archivo;
-    private JFrame wind;
-    private JMenuBar bar;
+    private JMenu file;
+    private JFrame wind;    
     
     public MenuBar(JFrame w){
         
-        this.setPreferredSize(new Dimension(800, 20));        
-        this.setBackground(new Color(125, 206, 160));
-        this.setLocale(null);
+        w.setLayout(null);
+        
+        //this.setPreferredSize(new Dimension(800, 20));        
+        //this.setBackground(new Color(125, 206, 160));
+        //this.setLocale(null);
         
         wind = w;
-        bar = new JMenuBar();
-        archivo = new JMenu();
+        mb = new JMenuBar();
+        file = new JMenu("Opciones");
         load = new JMenuItem("Cargar");
         save = new JMenuItem("Guardar PDF");
         delete = new JMenuItem("Borrar Archivo");
@@ -50,20 +53,22 @@ public class MenuBar extends JMenuBar {
             }
         });
                   
-        archivo.add(load);
-        archivo.add(save);
-        archivo.add(delete);
+        w.setJMenuBar(mb);
         
-        bar.add(archivo);
-        bar.setBackground(Color.red);
+        mb.add(file);                
         
-        //bar.setBounds(0, 0, 1300, 80);
+        file.add(load);
+        file.add(save);
+        file.add(delete);
         
-        this.add(bar,BorderLayout.NORTH);
+        //wind.add(mb);
+        //wind.add(bar,BorderLayout.NORTH);                
+                
+        //mb.setBackground(Color.red);                
         
-        wind.setJMenuBar(bar);
+        //this.add(bar,BorderLayout.NORTH);                
         
-        wind.add(bar,BorderLayout.NORTH);
+        
         
     }
 }
