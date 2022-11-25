@@ -10,41 +10,55 @@ import javax.swing.JButton;
 import pizarraproject.*;
 
 public class Mode extends JButton{
+    
     JButton editar;
     JButton borrar;
     Barra barra;
+    //Color def;
+    
     public Mode(Barra barraAux){
+        
+        //def = editar.get;
         barra = barraAux;
+                
         editar = new JButton("Modo editar");
+        editar.setBackground(Color.GRAY);
         //editar.setBounds(0, 0, 100, 100);
         //editar.setText("Modo editar ");
         editar.setFocusable(false);
-        //editar.addActionListener(this);
+        //editar.addActionListener(this);                
 
-         editar.addMouseListener(new java.awt.event.MouseAdapter() {
+        editar.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-               barra.getBorrar().setVisible(false);
-               barra.getEditar().setVisible(true);
-               System.out.println("Editar");
+               
+                editar.setBackground(Color.GREEN);
+                borrar.setBackground(Color.gray);
+                barra.getBorrar().setVisible(false);
+                barra.getEditar().setVisible(true);
+                System.out.println("Editar");
             }
         });
         
         barra.add(editar, BorderLayout.NORTH);
-        
-         
+                        
         borrar = new JButton("Modo Borrar");
+        borrar.setBackground(Color.gray);
+        
         //borrar.setBounds(0, 0, 100, 100);
         //borrar.setText("Modo Borrar");
         borrar.setFocusable(false);
         //borrar.addActionListener(this);
         
-         borrar.addMouseListener(new java.awt.event.MouseAdapter() {
+        borrar.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-               barra.getBorrar().setVisible(true);
-               barra.getEditar().setVisible(false);
-               System.out.println("Borrar");
+               
+                borrar.setBackground(Color.GREEN);
+                editar.setBackground(Color.GRAY);
+                barra.getBorrar().setVisible(true);
+                barra.getEditar().setVisible(false);
+                System.out.println("Borrar");
             }
         });
          

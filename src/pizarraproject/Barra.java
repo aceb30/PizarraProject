@@ -7,6 +7,7 @@ import javax.swing.*;
 
 
 public class Barra extends JPanel{
+    
     Mode modos;
     Editar barraEditar;
     Borrar barraBorrar;
