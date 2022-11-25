@@ -31,18 +31,13 @@ public class Barra extends JPanel{
         
         
         this.add(barraEditar, BorderLayout.EAST);
-        this.add(barraBorrar, BorderLayout.WEST);
-        
-        
-        
+        this.add(barraBorrar, BorderLayout.WEST);        
+                
         barraEditar.setVisible(true);
         barraBorrar.setVisible(false);
         
         modos = new Mode(this);
-       
-  
-        
-        
+                         
         /* X and y positions
         gbc.gridx = 0;
         gbc.gridy = 0;

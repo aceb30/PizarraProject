@@ -22,7 +22,7 @@ public class Mode extends JButton{
         barra = barraAux;
                 
         editar = new JButton("Modo editar");
-        editar.setBackground(Color.GRAY);
+        editar.setBackground(Color.GREEN);
         //editar.setBounds(0, 0, 100, 100);
         //editar.setText("Modo editar ");
         editar.setFocusable(false);
