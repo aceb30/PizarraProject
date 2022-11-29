@@ -20,13 +20,15 @@ public class Mode extends JButton{
         
         //def = editar.get;
         barra = barraAux;
+        //this.setPreferredSize(new Dimension(300, 500));
+        //this.setBackground(Color.MAGENTA);
                 
         editar = new JButton("Modo editar");
         editar.setBackground(Color.GREEN);
-        //editar.setBounds(0, 0, 100, 100);
-        //editar.setText("Modo editar ");
+        editar.setPreferredSize(new Dimension(50,50));
+        //editar.setBounds(0, 0, 100, 100);        
         editar.setFocusable(false);
-        //editar.addActionListener(this);                
+        //editar.addActionListener(this);          
 
         editar.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
@@ -39,11 +41,12 @@ public class Mode extends JButton{
                 System.out.println("Editar");
             }
         });
-        
+        //editar.setBounds(0, 0, 150, 30);
         barra.add(editar, BorderLayout.NORTH);
                         
         borrar = new JButton("Modo Borrar");
         borrar.setBackground(Color.gray);
+        borrar.setPreferredSize(new Dimension(50,50));
         
         //borrar.setBounds(0, 0, 100, 100);
         //borrar.setText("Modo Borrar");

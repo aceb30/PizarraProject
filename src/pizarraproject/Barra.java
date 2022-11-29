@@ -23,7 +23,7 @@ public class Barra extends JPanel{
         //gbc = new GridBagConstraints();
 
         this.setPreferredSize(new Dimension(300, 650));
-        this.setBackground(new Color(93, 142, 113));
+        this.setBackground(Color.BLACK);
         
         
         barraEditar = new Editar();

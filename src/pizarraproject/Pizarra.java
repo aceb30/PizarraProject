@@ -23,7 +23,7 @@ public class Pizarra extends JPanel {
     public Pizarra() throws IOException {
         this.drawn = new ArrayList<Drawn>();
 
-        this.setPreferredSize(new Dimension(1000, 600));
+        this.setPreferredSize(new Dimension(975, 600));
         this.setBackground(new Color(250, 250, 250));
         Listener listener = new Listener();
         this.addMouseListener(listener);

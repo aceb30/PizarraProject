@@ -8,13 +8,14 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class Borrar extends JPanel{
+    
     BotonesBorrar botones;
     JButton prueba;
     public Borrar(){
         
         this.setBounds(50, 20, 100, 100);
         this.setPreferredSize(new Dimension(300, 500));
-        this.setBackground(new Color(215, 68, 68));
+        this.setBackground(Color.RED);
         
         this.setLayout(null);
         
