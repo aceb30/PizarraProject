@@ -20,15 +20,14 @@ public class BotonesBorrar {
         object = new JButton("Objeto");
         object.setFocusable(false);
         object.setBounds(0, 0, 100, 100);
-        object.setBackground(Color.LIGHT_GRAY);
+        object.setBackground(Color.GREEN);
         
         object.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                System.out.println("Object");
+               setColor();
                object.setBackground(Color.GREEN);
-               select.setBackground(Color.LIGHT_GRAY);
-               all.setBackground(Color.LIGHT_GRAY);
             }
         });
         
@@ -41,9 +40,8 @@ public class BotonesBorrar {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                System.out.println("Select");
+               setColor();
                select.setBackground(Color.GREEN);
-               object.setBackground(Color.LIGHT_GRAY);
-               all.setBackground(Color.LIGHT_GRAY);
             }
         });
         
@@ -56,14 +54,21 @@ public class BotonesBorrar {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                System.out.println("All");
-               all.setBackground(Color.GREEN);
-               object.setBackground(Color.LIGHT_GRAY);
-               select.setBackground(Color.LIGHT_GRAY);
+               setColor();
+               all.setBackground(Color.GREEN);               
             }
         });
         
         borrar.add(object);
         borrar.add(select);
         borrar.add(all);
+    }
+    
+    public void setColor(){
+    
+        all.setBackground(Color.LIGHT_GRAY);
+        object.setBackground(Color.LIGHT_GRAY);
+        select.setBackground(Color.LIGHT_GRAY);
+        
     }
 }

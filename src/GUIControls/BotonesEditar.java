@@ -23,30 +23,28 @@ public class BotonesEditar {
         diagram = new JButton("Diagrama");
         diagram.setFocusable(false);
         diagram.setBounds(0, 0, 100, 100);
-        diagram.setBackground(Color.LIGHT_GRAY);
+        diagram.setBackground(Color.GREEN);
         
         diagram.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                System.out.println("Digram mode");
                diagram.setBackground(Color.GREEN);
-               asoc.setBackground(Color.LIGHT_GRAY);
-               comp.setBackground(Color.LIGHT_GRAY);
+               setColor();
             }
         });
         
         asoc = new JButton("Asociación");
         asoc.setFocusable(false);
         asoc.setBounds(100, 0, 100, 100);
-        asoc.setBackground(Color.GREEN);
+        asoc.setBackground(Color.LIGHT_GRAY);
         
         asoc.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                System.out.println("Line mode");
-               asoc.setBackground(Color.GREEN);
-               diagram.setBackground(Color.LIGHT_GRAY);
-               comp.setBackground(Color.LIGHT_GRAY);
+               setColor();
+               asoc.setBackground(Color.GREEN);               
             }
         });
         
@@ -60,9 +58,8 @@ public class BotonesEditar {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                System.out.println("Comps mode");
-               comp.setBackground(Color.GREEN);
-               asoc.setBackground(Color.LIGHT_GRAY);
-               diagram.setBackground(Color.LIGHT_GRAY);
+               setColor();
+               comp.setBackground(Color.GREEN);               
             }
         });
         
@@ -75,9 +72,8 @@ public class BotonesEditar {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                System.out.println("Other mode");
-               gene.setBackground(Color.GREEN);
-               asoc.setBackground(Color.LIGHT_GRAY);
-               diagram.setBackground(Color.LIGHT_GRAY);
+               setColor();
+               gene.setBackground(Color.GREEN);               
             }
         });
         
@@ -88,11 +84,10 @@ public class BotonesEditar {
         
         depe.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-               System.out.println("Other mode");
-               depe.setBackground(Color.GREEN);
-               asoc.setBackground(Color.LIGHT_GRAY);
-               diagram.setBackground(Color.LIGHT_GRAY);
+            public void mouseClicked(java.awt.event.MouseEvent evt) {               
+                System.out.println("Other mode");               
+                setColor();
+                depe.setBackground(Color.GREEN);               
             }
         });
         
@@ -105,9 +100,8 @@ public class BotonesEditar {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                System.out.println("Other mode");
-               text.setBackground(Color.GREEN);
-               asoc.setBackground(Color.LIGHT_GRAY);
-               diagram.setBackground(Color.LIGHT_GRAY);
+               setColor();
+               text.setBackground(Color.GREEN);               
             }
         });
         
@@ -123,6 +117,11 @@ public class BotonesEditar {
         
         asoc.setBackground(Color.LIGHT_GRAY);
         diagram.setBackground(Color.LIGHT_GRAY);
+        comp.setBackground(Color.LIGHT_GRAY);
+        depe.setBackground(Color.LIGHT_GRAY);
+        gene.setBackground(Color.LIGHT_GRAY);
+        text.setBackground(Color.LIGHT_GRAY);
+        
     }
 }
 
