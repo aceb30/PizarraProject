@@ -14,6 +14,7 @@ public class MenuBar extends JMenuBar {
     private JMenuItem save;
     private JMenuItem delete;
     private JMenu file;
+    private JMenu addW;
     private JFrame wind;    
     
     public MenuBar(JFrame w){
@@ -30,6 +31,8 @@ public class MenuBar extends JMenuBar {
         load = new JMenuItem("Cargar");
         save = new JMenuItem("Guardar PDF");
         delete = new JMenuItem("Borrar Archivo");
+        
+        addW = new JMenu("+");
         
         
         load.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -55,7 +58,8 @@ public class MenuBar extends JMenuBar {
                   
         w.setJMenuBar(mb);
         
-        mb.add(file);                
+        mb.add(file);
+        mb.add(addW);
         
         file.add(load);
         file.add(save);

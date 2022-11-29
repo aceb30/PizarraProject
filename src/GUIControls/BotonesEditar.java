@@ -8,33 +8,21 @@ import pizarraproject.*;
 
 public class BotonesEditar {
     
-    private JButton line;
     private JButton diagram;
-    private JButton other;
+    private JButton asoc;    
+    private JButton comp;
+    private JButton gene;
+    private JButton depe;
+    private JButton text;
     private Editar editar;
     
     public BotonesEditar(Editar b){
         
         editar = b;                                
-        
-        line = new JButton("Linea");
-        line.setFocusable(false);
-        line.setBounds(0, 0, 100, 100);
-        line.setBackground(Color.GREEN);
-        
-        line.addMouseListener(new java.awt.event.MouseAdapter() {
-            @Override
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-               System.out.println("Line mode");
-               line.setBackground(Color.GREEN);
-               diagram.setBackground(Color.LIGHT_GRAY);
-               other.setBackground(Color.LIGHT_GRAY);
-            }
-        });
-        
+                
         diagram = new JButton("Diagrama");
         diagram.setFocusable(false);
-        diagram.setBounds(100, 0, 100, 100);
+        diagram.setBounds(0, 0, 100, 100);
         diagram.setBackground(Color.LIGHT_GRAY);
         
         diagram.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -42,29 +30,99 @@ public class BotonesEditar {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                System.out.println("Digram mode");
                diagram.setBackground(Color.GREEN);
-               line.setBackground(Color.LIGHT_GRAY);
-               other.setBackground(Color.LIGHT_GRAY);
+               asoc.setBackground(Color.LIGHT_GRAY);
+               comp.setBackground(Color.LIGHT_GRAY);
             }
         });
         
-        other = new JButton("Otro");
-        other.setFocusable(false);
-        other.setBounds(200, 0, 100, 100);
-        other.setBackground(Color.LIGHT_GRAY);
+        asoc = new JButton("Asociación");
+        asoc.setFocusable(false);
+        asoc.setBounds(100, 0, 100, 100);
+        asoc.setBackground(Color.GREEN);
         
-        other.addMouseListener(new java.awt.event.MouseAdapter() {
+        asoc.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-               System.out.println("Other mode");
-               other.setBackground(Color.GREEN);
-               line.setBackground(Color.LIGHT_GRAY);
+               System.out.println("Line mode");
+               asoc.setBackground(Color.GREEN);
+               diagram.setBackground(Color.LIGHT_GRAY);
+               comp.setBackground(Color.LIGHT_GRAY);
+            }
+        });
+        
+        
+        comp = new JButton("Composición");
+        comp.setFocusable(false);
+        comp.setBounds(200, 0, 100, 100);
+        comp.setBackground(Color.LIGHT_GRAY);
+        
+        comp.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+               System.out.println("Comps mode");
+               comp.setBackground(Color.GREEN);
+               asoc.setBackground(Color.LIGHT_GRAY);
                diagram.setBackground(Color.LIGHT_GRAY);
             }
         });
         
-        editar.add(line);
+        gene = new JButton("Generalización");
+        gene.setFocusable(false);
+        gene.setBounds(0, 100, 100, 100);
+        gene.setBackground(Color.LIGHT_GRAY);
+        
+        gene.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+               System.out.println("Other mode");
+               gene.setBackground(Color.GREEN);
+               asoc.setBackground(Color.LIGHT_GRAY);
+               diagram.setBackground(Color.LIGHT_GRAY);
+            }
+        });
+        
+        depe = new JButton("Dependencia");
+        depe.setFocusable(false);
+        depe.setBounds(100,100, 100, 100);
+        depe.setBackground(Color.LIGHT_GRAY);
+        
+        depe.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+               System.out.println("Other mode");
+               depe.setBackground(Color.GREEN);
+               asoc.setBackground(Color.LIGHT_GRAY);
+               diagram.setBackground(Color.LIGHT_GRAY);
+            }
+        });
+        
+        text = new JButton("Texto");
+        text.setFocusable(false);
+        text.setBounds(200, 100, 100, 100);
+        text.setBackground(Color.LIGHT_GRAY);
+        
+        text.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+               System.out.println("Other mode");
+               text.setBackground(Color.GREEN);
+               asoc.setBackground(Color.LIGHT_GRAY);
+               diagram.setBackground(Color.LIGHT_GRAY);
+            }
+        });
+        
+        editar.add(asoc);
         editar.add(diagram);
-        editar.add(other);
+        editar.add(comp);
+        editar.add(gene);
+        editar.add(depe);
+        editar.add(text);        
+    }
+    
+    public void setColor(){
+        
+        asoc.setBackground(Color.LIGHT_GRAY);
+        diagram.setBackground(Color.LIGHT_GRAY);
     }
 }
 

@@ -14,7 +14,7 @@ public class Borrar extends JPanel{
     public Borrar(){
         
         this.setBounds(50, 20, 100, 100);
-        this.setPreferredSize(new Dimension(300, 500));
+        this.setPreferredSize(new Dimension(300, 700));
         this.setBackground(Color.RED);
         
         this.setLayout(null);

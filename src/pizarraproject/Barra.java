@@ -18,7 +18,7 @@ public class Barra extends JPanel{
         
         ventana = window_aux;
         //this.setLocale(null);
-        this.setLayout(new BorderLayout());
+        //this.setLayout(new BorderLayout());
         //this.setLayout(new GridBagLayout());
         //gbc = new GridBagConstraints();
 
@@ -29,14 +29,15 @@ public class Barra extends JPanel{
         barraEditar = new Editar();
         barraBorrar = new Borrar();
         
+        modos = new Mode(this);
         
-        this.add(barraEditar, BorderLayout.EAST);
-        this.add(barraBorrar, BorderLayout.WEST);        
+        this.add(barraEditar, BorderLayout.SOUTH);
+        this.add(barraBorrar, BorderLayout.SOUTH);        
                 
         barraEditar.setVisible(true);
         barraBorrar.setVisible(false);
         
-        modos = new Mode(this);
+        
                          
         /* X and y positions
         gbc.gridx = 0;

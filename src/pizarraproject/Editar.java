@@ -16,7 +16,7 @@ public class Editar extends JPanel {
         
         this.setLocale(null);
         this.setBounds(50, 20, 100, 100);
-        this.setPreferredSize(new Dimension(300, 500));
+        this.setPreferredSize(new Dimension(300,600));
         this.setBackground(Color.BLUE);
         
         this.setLayout(null);
