@@ -45,6 +45,12 @@ public class Pizarra extends JPanel {
 
         public void mouseDragged(MouseEvent m) {
             curr.pixels.add(new Point(m.getX(), m.getY()));
+            
+            Point before = curr.pixels.get(curr.pixels.size() - 1);
+            if(before != null) {
+                
+            }
+            
             System.out.println("drag");
             repaint();
         }
@@ -52,7 +58,6 @@ public class Pizarra extends JPanel {
         @Override
         public void mouseReleased(MouseEvent me) {
             drawn.add(curr);
-            //this.curr = null;
             repaint();
         }
 
@@ -74,13 +79,21 @@ public class Pizarra extends JPanel {
         for (int i = 0; i < drawn.size(); i++) {
             for (int j = 0; j < drawn.get(i).pixels.size(); j++) {
                 Point p = drawn.get(i).pixels.get(j);
-                g.drawRect(p.x, p.y, 1, 1);
+                g.drawLine(p.x, p.y, p.x, p.y);
+                try {Point before = drawn.get(i).pixels.get(j - 1); g.drawLine(before.x, before.y, p.x, p.y);}
+                catch (Exception e) {
+                    // lol, lmao
+                }
             }
         }
         if (this.curr != null) {
             for (int i = 0; i < this.curr.pixels.size(); i++) {
                 Point p = this.curr.pixels.get(i);
-                g.drawRect(p.x, p.y, 1, 1);
+                g.drawLine(p.x, p.y, p.x, p.y);
+                try {Point before = this.curr.pixels.get(i - 1); g.drawLine(before.x, before.y, p.x, p.y);}
+                catch (Exception e) {
+                    // lol, lmao
+                }
             }
         }
     }
