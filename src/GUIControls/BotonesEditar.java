@@ -29,8 +29,8 @@ public class BotonesEditar {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                System.out.println("Digram mode");
-               diagram.setBackground(Color.GREEN);
                setColor();
+               diagram.setBackground(Color.GREEN);               
             }
         });
         
