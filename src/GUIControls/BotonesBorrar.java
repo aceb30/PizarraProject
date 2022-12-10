@@ -1,4 +1,3 @@
-
 package GUIControls;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -27,7 +26,7 @@ public class BotonesBorrar {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                System.out.println("Object");
                setColor();
-               object.setBackground(Color.GREEN);
+               object.setBackground(Color.cyan);
             }
         });
         

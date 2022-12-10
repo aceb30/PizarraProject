@@ -1,16 +1,15 @@
-
 package pizarraproject;
 import GUIControls.*;
 
 import java.awt.*;
 import javax.swing.*;
 
-
 public class Barra extends JPanel{
     
     Mode modos;
     Editar barraEditar;
     Borrar barraBorrar;
+    Colores bColores;
     Window ventana;
     
     //GridBagConstraints gbc;
@@ -24,21 +23,20 @@ public class Barra extends JPanel{
 
         this.setPreferredSize(new Dimension(300, 650));
         this.setBackground(Color.BLACK);
-        
-        
+                
         barraEditar = new Editar();
-        barraBorrar = new Borrar();
+        barraBorrar = new Borrar();   
+        bColores = new Colores();
         
         modos = new Mode(this);
         
         this.add(barraEditar, BorderLayout.SOUTH);
-        this.add(barraBorrar, BorderLayout.SOUTH);        
-                
+        this.add(barraBorrar, BorderLayout.SOUTH);
+        this.add(bColores, BorderLayout.SOUTH);
+                        
         barraEditar.setVisible(true);
         barraBorrar.setVisible(false);
-        
-        
-                         
+                                         
         /* X and y positions
         gbc.gridx = 0;
         gbc.gridy = 0;
@@ -60,7 +58,6 @@ public class Barra extends JPanel{
         this.repaint
         */
     }
-
     
     /*
     @Override

@@ -1,4 +1,3 @@
-
 package pizarraproject;
 
 import GUIControls.BotonesBorrar;
@@ -10,23 +9,14 @@ import javax.swing.*;
 public class Borrar extends JPanel{
     
     BotonesBorrar botones;
-    JButton prueba;
+    
     public Borrar(){
         
         this.setBounds(50, 20, 100, 100);
-        this.setPreferredSize(new Dimension(300, 700));
+        this.setPreferredSize(new Dimension(300, 300));
         this.setBackground(Color.RED);
         
-        this.setLayout(null);
-        
-        /*
-        prueba = new JButton();
-        prueba.setBounds(0, 0, 100, 100);
-        prueba.setText("Prueba2 ");
-        prueba.setFocusable(false);
-        prueba.addActionListener(this);
-        this.add(prueba);
-        */
+        this.setLayout(null);        
 
         botones = new BotonesBorrar(this);
         
