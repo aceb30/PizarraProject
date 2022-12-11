@@ -27,6 +27,11 @@ public class BotonesBorrar {
                System.out.println("Object");
                setColor();
                object.setBackground(Color.cyan);
+<<<<<<< Updated upstream
+=======
+               object.setBorder(new LineBorder(Color.GREEN));
+               add(object, gbc);
+>>>>>>> Stashed changes
             }
         });
         
