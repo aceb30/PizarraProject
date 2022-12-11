@@ -33,11 +33,10 @@ public class Pizarra extends JPanel {
         Listener listener = new Listener();
         this.addMouseListener(listener);
         this.addMouseMotionListener(listener);
-
     }
 
-    private ArrayList<Drawable> drawn;
-    private Drawable curr;
+    private static ArrayList<Drawable> drawn;
+    private static Drawable curr;
 
     class Listener extends MouseInputAdapter {
 
@@ -79,6 +78,7 @@ public class Pizarra extends JPanel {
 
         }
     }
+    
 
     @Override
     public void paint(Graphics g) {
@@ -98,6 +98,10 @@ public class Pizarra extends JPanel {
     
     public static void setColor(Color c) {
         color = c;
+    }
+    
+    public static void remove(){
+        drawn.remove(curr);
     }
     
 /*

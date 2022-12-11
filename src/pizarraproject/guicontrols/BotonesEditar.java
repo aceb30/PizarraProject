@@ -68,7 +68,8 @@ public class BotonesEditar {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                System.out.println("Composition mode");
                setColor();
-               comp.setBackground(Color.GREEN);               
+               comp.setBackground(Color.GREEN); 
+               Pizarra.remove();
             }
         });
         
