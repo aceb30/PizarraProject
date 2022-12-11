@@ -5,7 +5,9 @@ import java.io.IOException;
 import javax.swing.*;
 
 public class PizarraContainer extends JPanel {
+    
     private Pestaña pestaña;
+    
     public PizarraContainer() throws IOException{
         this.setLayout(new BorderLayout());
         pestaña = new Pestaña();

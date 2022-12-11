@@ -8,8 +8,7 @@ import pizarraproject.*;
 
 public class BotonesBorrar extends JPanel{
     
-    private JButton object;
-    private JButton select;
+    private JButton object;    
     private JButton all;
     private Borrar borrar;
     
@@ -17,41 +16,28 @@ public class BotonesBorrar extends JPanel{
         
         borrar = b;                
         
-        object = new JButton("Objeto");
+        object = new JButton();
         object.setFocusable(false);
-        object.setBounds(0, 0, 100, 100);
+        object.setBounds(10,10,50, 50);
         object.setBackground(Color.GREEN);
+        ImageIcon objIcon = new ImageIcon("obj.png");
+        object.setIcon(objIcon);
         
         object.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                System.out.println("Object");
                setColor();
-               object.setBackground(Color.cyan);
-               //object.setBorder(new LineBorder(Color.GREEN));
-               //add(object, gbc);
+               object.setBackground(Color.GREEN);               
             }
-        });
+        });        
         
-        select = new JButton("Selección");
-        select.setFocusable(false);
-        select.setBounds(100, 0, 100, 100);
-        select.setBackground(Color.LIGHT_GRAY);
-        
-        select.addMouseListener(new java.awt.event.MouseAdapter() {
-            @Override
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-               System.out.println("Select");
-               setColor();
-               select.setBackground(Color.GREEN);
-            }
-        });
-        
-        all = new JButton("Todo");
+        all = new JButton();
         all.setFocusable(false);
-        all.setBounds(200, 0, 100, 100);
-        all.setBackground(Color.LIGHT_GRAY);
-        
+        all.setBounds(65, 10, 50, 50);
+        all.setBackground(Color.GRAY);
+        ImageIcon allIcon = new ImageIcon("all.png");
+        all.setIcon(allIcon);
         all.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -61,16 +47,14 @@ public class BotonesBorrar extends JPanel{
             }
         });
         
-        borrar.add(object);
-        borrar.add(select);
+        borrar.add(object);        
         borrar.add(all);
     }
     
     public void setColor(){
     
-        all.setBackground(Color.LIGHT_GRAY);
-        object.setBackground(Color.LIGHT_GRAY);
-        select.setBackground(Color.LIGHT_GRAY);
+        all.setBackground(Color.GRAY);
+        object.setBackground(Color.GRAY);        
         
     }
 }
