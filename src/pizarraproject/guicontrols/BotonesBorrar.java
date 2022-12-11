@@ -43,7 +43,8 @@ public class BotonesBorrar extends JPanel{
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                System.out.println("All");
                setColor();
-               all.setBackground(Color.GREEN);               
+               all.setBackground(Color.GREEN);    
+               Pestaña.clear();
             }
         });
         

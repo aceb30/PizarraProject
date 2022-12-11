@@ -11,7 +11,7 @@ public class Pestaña extends JTabbedPane{
     private static ArrayList<Pizarra> pizarras;
     private ArrayList<String> names;
     public static int index;
-    private static Pizarra undoP;
+    private static Pizarra auxP;
     public Pestaña() throws IOException{
         pizarras = new ArrayList<Pizarra>();
         names = new ArrayList<String>();
@@ -41,13 +41,18 @@ public class Pestaña extends JTabbedPane{
     }
     
     public static void undo(){        
-        undoP = pizarras.get(index);
-        undoP.remove(); 
+        auxP = pizarras.get(index);
+        auxP.remove(); 
     }
     
     public static void redo(){        
-        undoP = pizarras.get(index);
-        undoP.restore();
+        auxP = pizarras.get(index);
+        auxP.restore();
+    }
+    
+    public static void clear(){
+        auxP = pizarras.get(index);
+        auxP.clear();
     }
     
   ChangeListener changeListener = new ChangeListener() {
