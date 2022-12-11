@@ -4,16 +4,10 @@
  */
 package pizarraproject.drawable;
 
-import java.awt.Graphics;
-
 /**
  *
  * @author nwroot
  */
-public class DrawableUMLComposition extends DrawableUMLLine {
-
-    @Override
-    public void paint(Graphics g) {
-        drawArrowLine(g, x1, y1, x2, y2, 10, 10, false, false);
-    }
+public class DrawableUMLDepends extends DrawableUMLLine {
+    
 }

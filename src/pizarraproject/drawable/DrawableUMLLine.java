@@ -4,8 +4,11 @@
  */
 package pizarraproject.drawable;
 
+import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Stroke;
 
 /**
  *
@@ -43,7 +46,7 @@ public class DrawableUMLLine implements Drawable {
         g.drawLine(x1, y1, x2, y2);
     }
 
-    protected void drawArrowLine(Graphics g, int x1, int y1, int x2, int y2, int d, int h, boolean fill) {
+    protected void drawArrowLine(Graphics g, int x1, int y1, int x2, int y2, int d, int h, boolean fill, boolean dotted) {
         int dx = x2 - x1, dy = y2 - y1;
         double D = Math.sqrt(dx * dx + dy * dy);
         double xm = D - d, xn = xm, ym = h, yn = -h, x;
@@ -60,7 +63,15 @@ public class DrawableUMLLine implements Drawable {
         int[] xpoints = {x2, (int) xm, (int) xn};
         int[] ypoints = {y2, (int) ym, (int) yn};
 
-        g.drawLine(x1, y1, x2, y2);
+        if(!dotted) g.drawLine(x1, y1, x2, y2);
+        else {
+            Graphics2D g2d = (Graphics2D) g;
+            Stroke old = g2d.getStroke();
+            float dash[] = { 2f, 0f, 2f};
+            g2d.setStroke(new BasicStroke(1, BasicStroke.CAP_BUTT, BasicStroke.JOIN_ROUND, 1.0f, dash, 2f));
+            g.drawLine(x1, y1, x2, y2);
+            g2d.setStroke(old);
+        }
         g.drawLine(x2, y2, (int)xm, (int)ym);
         g.drawLine(x2, y2, (int)xn, (int)yn);
         if(fill) g.drawPolygon(xpoints, ypoints, 3);
