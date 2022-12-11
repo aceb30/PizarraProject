@@ -17,6 +17,7 @@ public class BotonesEditar {
     private JButton penc;
     private JButton move;
     private JButton undo;
+    private JButton redo;
     private Editar editar;
     
     public BotonesEditar(Editar b, PizarraContainer p){
@@ -172,6 +173,23 @@ public class BotonesEditar {
             }
         });
         
+        redo = new JButton();
+        redo.setFocusable(false);
+        redo.setBounds(10,190,50,50);
+        redo.setBackground(Color.GRAY);
+        ImageIcon redoIcon = new ImageIcon("redo.png");
+        redo.setIcon(redoIcon);
+        
+        redo.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                System.out.println("Undo");
+                setColor();
+                redo.setBackground(Color.GREEN);
+                Pestaña.redo();               
+            }
+        });
+        
         editar.add(asoc);
         editar.add(diagram);
         editar.add(comp);
@@ -181,6 +199,7 @@ public class BotonesEditar {
         editar.add(penc);
         editar.add(move);
         editar.add(undo);
+        editar.add(redo);
     }
     
     public void setColor(){

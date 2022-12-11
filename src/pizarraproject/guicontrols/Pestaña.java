@@ -45,6 +45,11 @@ public class Pestaña extends JTabbedPane{
         undoP.remove(); 
     }
     
+    public static void redo(){        
+        undoP = pizarras.get(index);
+        undoP.restore();
+    }
+    
   ChangeListener changeListener = new ChangeListener() {
         public void stateChanged(ChangeEvent changeEvent) {
         JTabbedPane sourceTabbedPane = (JTabbedPane) changeEvent.getSource();
