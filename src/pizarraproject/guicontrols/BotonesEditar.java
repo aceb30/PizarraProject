@@ -34,7 +34,8 @@ public class BotonesEditar {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                System.out.println("Digram mode");
                setColor();
-               diagram.setBackground(Color.GREEN);               
+               diagram.setBackground(Color.GREEN);
+               Pizarra.setColor(1);
             }
         });
         
@@ -131,7 +132,8 @@ public class BotonesEditar {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                System.out.println("Pencil mode");
                setColor();
-               penc.setBackground(Color.GREEN);               
+               penc.setBackground(Color.GREEN); 
+               Pizarra.setColor(2);
             }
         });
         

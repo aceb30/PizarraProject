@@ -37,8 +37,8 @@ public class BotonesColores extends JPanel{
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {               
                 System.out.println("Black");               
-                setColor();
-                blackButton.setBorder(gBorder);                
+                cleanColor();
+                blackButton.setBorder(gBorder);                   
             }
         });
         
@@ -51,7 +51,7 @@ public class BotonesColores extends JPanel{
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                System.out.println("Red");
-               setColor();
+               cleanColor();
                redButton.setBorder(gBorder);               
             }
         });
@@ -65,7 +65,7 @@ public class BotonesColores extends JPanel{
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                System.out.println("Magneta");
-               setColor();
+               cleanColor();
                magentaButton.setBorder(gBorder);              
             }
         });
@@ -80,7 +80,7 @@ public class BotonesColores extends JPanel{
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                System.out.println("Yellow");
-               setColor();
+               cleanColor();
                yellowButton.setBorder(gBorder);             
             }
         });
@@ -94,7 +94,7 @@ public class BotonesColores extends JPanel{
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                System.out.println("Gray");
-               setColor();
+               cleanColor();
                grayButton.setBorder(gBorder);               
             }
         });                
@@ -108,7 +108,7 @@ public class BotonesColores extends JPanel{
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                System.out.println("Orange");
-               setColor();
+               cleanColor();
                orangeButton.setBorder(gBorder);               
             }
         });
@@ -122,7 +122,7 @@ public class BotonesColores extends JPanel{
         
     }
     
-    public void setColor(){
+    public void cleanColor(){
         
         redButton.setBorder(lBorder);
         magentaButton.setBorder(lBorder);
