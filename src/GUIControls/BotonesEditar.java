@@ -16,11 +16,11 @@ public class BotonesEditar {
     private JButton text;
     private Editar editar;
     
-    public BotonesEditar(Editar b){
+    public BotonesEditar(Editar b, PizarraContainer p){
         
         editar = b;                                
                 
-        diagram = new JButton("Diagrama");
+        diagram = new JButton("Clase");
         diagram.setFocusable(false);
         diagram.setBounds(0, 0, 100, 100);
         diagram.setBackground(Color.GREEN);

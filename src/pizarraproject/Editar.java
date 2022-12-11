@@ -12,7 +12,7 @@ public class Editar extends JPanel {
     JButton prueba;
     BotonesEditar botones;
     
-    public Editar(){
+    public Editar(PizarraContainer p){
         
         this.setLocale(null);
         this.setBounds(50, 20, 100, 100);
@@ -20,7 +20,7 @@ public class Editar extends JPanel {
         this.setBackground(Color.BLUE);
         
         this.setLayout(null);
-        botones = new BotonesEditar(this);
+        botones = new BotonesEditar(this, p);
         this.revalidate();
         this.repaint();
     }

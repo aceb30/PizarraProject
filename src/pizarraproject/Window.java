@@ -27,7 +27,7 @@ public class Window extends JFrame {
     public Window() throws IOException{
         pizarracont = new PizarraContainer();
         menu = new MenuBar(this, pizarracont);        
-        barra = new Barra(this);
+        barra = new Barra(this, pizarracont);
         
         
         //this.setLocationRelativeTo(null);

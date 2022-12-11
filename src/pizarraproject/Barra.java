@@ -13,7 +13,7 @@ public class Barra extends JPanel{
     Window ventana;
     
     //GridBagConstraints gbc;
-    public Barra(Window window_aux){
+    public Barra(Window window_aux, PizarraContainer p){
         
         ventana = window_aux;
         //this.setLocale(null);
@@ -24,7 +24,7 @@ public class Barra extends JPanel{
         this.setPreferredSize(new Dimension(300, 650));
         this.setBackground(Color.BLACK);
                 
-        barraEditar = new Editar();
+        barraEditar = new Editar(p);
         barraBorrar = new Borrar();   
         bColores = new Colores();
         
