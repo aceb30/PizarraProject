@@ -14,6 +14,7 @@ public class BotonesEditar {
     private JButton gene;
     private JButton depe;
     private JButton text;
+    private JButton penc;
     private Editar editar;
     
     public BotonesEditar(Editar b, PizarraContainer p){
@@ -105,7 +106,7 @@ public class BotonesEditar {
         text.setFocusable(false);
         text.setBounds(120,70,50,50);
         text.setBackground(Color.LIGHT_GRAY);
-        ImageIcon TIcon = new ImageIcon("T.png");
+        ImageIcon TIcon = new ImageIcon("text.png");
         text.setIcon(TIcon);
         
         text.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -114,6 +115,22 @@ public class BotonesEditar {
                System.out.println("Text mode");
                setColor();
                text.setBackground(Color.GREEN);               
+            }
+        });
+        
+        penc = new JButton();
+        penc.setFocusable(false);
+        penc.setBounds(120,70,50,50);
+        penc.setBackground(Color.LIGHT_GRAY);
+        ImageIcon pencIcon = new ImageIcon("penc.png");
+        penc.setIcon(TIcon);
+        
+        penc.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+               System.out.println("Text mode");
+               setColor();
+               penc.setBackground(Color.GREEN);               
             }
         });
         
