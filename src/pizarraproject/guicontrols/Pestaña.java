@@ -8,10 +8,9 @@ import javax.swing.event.ChangeListener;
 
 public class Pestaña extends JTabbedPane{
     
-    private static ArrayList<Pizarra> pizarras;
-    private ArrayList<String> names;    
-    public static int index;
-    public static Pizarra f;
+    private ArrayList<Pizarra> pizarras;
+    private ArrayList<String> names;
+    private int index;
     public Pestaña() throws IOException{
         pizarras = new ArrayList<Pizarra>();
         names = new ArrayList<String>();
@@ -36,9 +35,8 @@ public class Pestaña extends JTabbedPane{
         return index;
     }
     
-    public static void undo(){        
-        f=pizarras.get(index);
-        f.remove();                
+    public Pizarra getPizarra(int i){
+        return pizarras.get(i);
     }
     
   ChangeListener changeListener = new ChangeListener() {
