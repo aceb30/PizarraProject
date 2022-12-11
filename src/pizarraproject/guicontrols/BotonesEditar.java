@@ -85,9 +85,10 @@ public class BotonesEditar {
         gene.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-               System.out.println("Generelization mode");
-               setColor();
-               gene.setBackground(Color.GREEN);               
+                System.out.println("Generelization mode");
+                setColor();
+                gene.setBackground(Color.GREEN);
+                Pizarra.setMode(5);
             }
         });
         

@@ -20,20 +20,21 @@ import pizarraproject.drawable.Drawable;
 import pizarraproject.drawable.DrawableLine;
 import pizarraproject.drawable.DrawableUMLAssoc;
 import pizarraproject.drawable.DrawableUMLClass;
+import pizarraproject.drawable.DrawableUMLGeneralization;
 import pizarraproject.drawable.DrawableUMLLine;
 
 public class Pizarra extends JPanel {
 
-    public static Object get(int index) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
     private JLabel label;
     private static int mode = 1;
     private static Color color;
-    public static Drawable save;
+    public static ArrayList<Drawable> save;
+    private ArrayList<Drawable> drawn;
+    private  Drawable curr;
+    
     public Pizarra() throws IOException {
         this.drawn = new ArrayList<Drawable>();
+        save = new ArrayList<Drawable>();
 
         this.setPreferredSize(new Dimension(975, 600));
         this.setBackground(new Color(250, 250, 250));
@@ -41,9 +42,7 @@ public class Pizarra extends JPanel {
         this.addMouseListener(listener);
         this.addMouseMotionListener(listener);
     }
-
-    private ArrayList<Drawable> drawn;
-    private  Drawable curr;
+    
 
     class Listener extends MouseInputAdapter {
 
@@ -60,9 +59,11 @@ public class Pizarra extends JPanel {
             if (mode==3){
                 curr = new DrawableUMLAssoc();
             }
+            if (mode==5){
+                curr = new DrawableUMLGeneralization();
+            }
             curr.set_color(color);
-            curr.set_origin(m.getX(), m.getY());
-            save=curr;
+            curr.set_origin(m.getX(), m.getY());            
             repaint();
             
             System.out.println(mode);
@@ -75,8 +76,7 @@ public class Pizarra extends JPanel {
 
         @Override
         public void mouseReleased(MouseEvent me) {
-            drawn.add(curr);
-            save=curr;
+            drawn.add(curr);            
             repaint();
         }
 
@@ -112,17 +112,21 @@ public class Pizarra extends JPanel {
     }
     
     public void remove(){
-        drawn.remove(curr);
-        curr=null;
-        repaint();        
+        if (drawn.size()!=0) {
+            save.add(drawn.remove(drawn.size()-1));
+            //drawn.remove(drawn.size()-1);        
+            curr=null;
+            repaint();        
+        }else
+            System.out.println("Drawn Null");        
     }
     
     public void restore(){
-        if (save!=null) {
-            curr=save;
-        drawn.add(curr);             
-        repaint();      
-        System.out.println("redo");
+        if (save.size()!=0) {
+            curr=save.remove(save.size()-1);
+            drawn.add(curr);             
+            repaint();      
+            System.out.println("redo");
         }else
             System.out.println("Save is Null");
         
