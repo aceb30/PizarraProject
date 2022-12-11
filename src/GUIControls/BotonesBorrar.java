@@ -3,9 +3,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import pizarraproject.*;
 
-public class BotonesBorrar {
+public class BotonesBorrar extends JPanel{
     
     private JButton object;
     private JButton select;
@@ -14,6 +15,11 @@ public class BotonesBorrar {
     
     public BotonesBorrar(Borrar b){
         
+        setLayout(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+
+        gbc.gridwidth = GridBagConstraints.REMAINDER;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
         borrar = b;
         
         object = new JButton("Objeto");
@@ -27,6 +33,8 @@ public class BotonesBorrar {
                System.out.println("Object");
                setColor();
                object.setBackground(Color.cyan);
+               object.setBorder(new LineBorder(Color.BLACK));
+               add(object, gbc);
             }
         });
         

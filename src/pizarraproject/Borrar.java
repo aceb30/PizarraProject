@@ -22,15 +22,5 @@ public class Borrar extends JPanel{
         
         this.revalidate();
         this.repaint();
-    }
-      
-   /*
-    @Override
-    public void actionPerformed(ActionEvent e) {
-         if(e.getSource()==prueba){
-            System.out.println("Prueba");
-        }
-    }
-*/
-    
+    }             
 }

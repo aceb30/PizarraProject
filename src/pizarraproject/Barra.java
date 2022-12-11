@@ -9,7 +9,7 @@ public class Barra extends JPanel{
     Mode modos;
     Editar barraEditar;
     Borrar barraBorrar;
-    Colores bColores;
+    Colores barraColores;
     Window ventana;
     
     //GridBagConstraints gbc;
@@ -26,16 +26,17 @@ public class Barra extends JPanel{
                 
         barraEditar = new Editar(p);
         barraBorrar = new Borrar();   
-        bColores = new Colores();
+        barraColores = new Colores();
         
         modos = new Mode(this);
         
         this.add(barraEditar, BorderLayout.SOUTH);
         this.add(barraBorrar, BorderLayout.SOUTH);
-        this.add(bColores, BorderLayout.SOUTH);
+        this.add(barraColores, BorderLayout.SOUTH);
                         
         barraEditar.setVisible(true);
         barraBorrar.setVisible(false);
+        barraColores.setVisible(true);
                                          
         /* X and y positions
         gbc.gridx = 0;

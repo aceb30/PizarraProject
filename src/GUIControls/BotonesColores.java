@@ -12,18 +12,21 @@ public class BotonesColores {
     private JButton yellowButton;
     private JButton grayButton;
     private JButton blackButton;
-    private JButton orangeButton;
-    private Colores colores;
+    private JButton orangeButton;    
+    private Colores color;
     
-    public void BotonesColores(Colores c){
+    private JButton object;
+    
+    public BotonesColores(Colores c){
         
-        colores = c;
+        color = c;
         
+        /*object = new JButton("Objeto");
+        object.setFocusable(false);
+        object.setBounds(0, 0, 100, 100);
+        object.setBackground(Color.GREEN);
+         
+        color.add(object);*/
     
-    
-    }
-    
-    
-
-    
+    }           
 }
