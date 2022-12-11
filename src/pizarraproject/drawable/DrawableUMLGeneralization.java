@@ -11,8 +11,8 @@ import java.awt.Graphics;
  * @author nwroot
  */
 public class DrawableUMLGeneralization extends DrawableUMLLine {
-        @Override
+    @Override
     public void paint(Graphics g) {
-        drawArrowLine(g, x1, y1, x2, y2, 10, 10, true);
+        drawArrowLine(g, x1, y1, x2, y2, 10, 10, true, false);
     }
 }

@@ -13,6 +13,6 @@ import java.awt.Graphics;
 public class DrawableUMLAssoc extends DrawableUMLLine {
     @Override
     public void paint(Graphics g) {
-        drawArrowLine(g, x1, y1, x2, y2, 10, 10, false);
+        drawArrowLine(g, x1, y1, x2, y2, 10, 10, false, false);
     }
 }
