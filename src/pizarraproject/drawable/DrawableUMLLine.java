@@ -12,19 +12,8 @@ import java.awt.Graphics;
  * @author nwroot
  */
 public class DrawableUMLLine implements Drawable {
-    private int x1, y1, x2, y2;
-    public DrawableUMLClass origin, dest;
-    public int origin_which, dest_which;
-    
-    
-    @Override
-    public void paint(Graphics g) {
-        x1 = origin.get_bind_x(origin_which);
-        y1 = origin.get_bind_y(origin_which);
-        x2 = dest.get_bind_x(dest_which);
-        y2 = dest.get_bind_y(dest_which);
-        g.drawLine(x1, y1, x2, y2);
-    }
+
+    protected int x1, y1, x2, y2;
 
     @Override
     public void update_from_pos(int x, int y) {
@@ -48,12 +37,32 @@ public class DrawableUMLLine implements Drawable {
     public Color get_color() {
         return null;
     }
-    public void bind_to_uml_dest(DrawableUMLClass other, int which) {
-        dest = other;
-        dest_which = which;
+
+    @Override
+    public void paint(Graphics g) {
+        g.drawLine(x1, y1, x2, y2);
     }
-    public void bind_to_uml_origin(DrawableUMLClass other, int which) {
-        origin = other;
-        origin_which = which;
+
+    protected void drawArrowLine(Graphics g, int x1, int y1, int x2, int y2, int d, int h, boolean fill) {
+        int dx = x2 - x1, dy = y2 - y1;
+        double D = Math.sqrt(dx * dx + dy * dy);
+        double xm = D - d, xn = xm, ym = h, yn = -h, x;
+        double sin = dy / D, cos = dx / D;
+
+        x = xm * cos - ym * sin + x1;
+        ym = xm * sin + ym * cos + y1;
+        xm = x;
+
+        x = xn * cos - yn * sin + x1;
+        yn = xn * sin + yn * cos + y1;
+        xn = x;
+
+        int[] xpoints = {x2, (int) xm, (int) xn};
+        int[] ypoints = {y2, (int) ym, (int) yn};
+
+        g.drawLine(x1, y1, x2, y2);
+        g.drawLine(x2, y2, (int)xm, (int)ym);
+        g.drawLine(x2, y2, (int)xn, (int)yn);
+        if(fill) g.drawPolygon(xpoints, ypoints, 3);
     }
 }
