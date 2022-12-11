@@ -17,7 +17,7 @@ public class Barra extends JPanel{
         
         ventana = window_aux;
 
-        this.setPreferredSize(new Dimension(300, 650));
+        this.setPreferredSize(new Dimension(300, 450));
         this.setBackground(Color.BLACK);
                 
         barraEditar = new Editar(p);
