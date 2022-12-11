@@ -5,6 +5,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
+import pizarraproject.NewPizarra;
+import pizarraproject.PizarraContainer;
 
 
 public class MenuBar extends JMenuBar {
@@ -16,8 +18,8 @@ public class MenuBar extends JMenuBar {
     private JMenu file;
     private JMenu addW;
     private JFrame wind;    
-    
-    public MenuBar(JFrame w){
+ 
+    public MenuBar(JFrame w, PizarraContainer cont){
         
         w.setLayout(null);
         
@@ -32,7 +34,16 @@ public class MenuBar extends JMenuBar {
         save = new JMenuItem("Guardar PDF");
         delete = new JMenuItem("Borrar Archivo");
         
-        addW = new JMenu("+");
+        addW = new JMenu("Nueva Pizarra");
+        
+        addW.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+               NewPizarra nueva = new NewPizarra(w, cont);
+               System.out.println("Nueva");
+            }
+        });
+        
         
         
         load.addMouseListener(new java.awt.event.MouseAdapter() {

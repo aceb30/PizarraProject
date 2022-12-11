@@ -16,7 +16,7 @@ import javax.swing.JMenuItem;
 
 
 public class Window extends JFrame {
-    private Pizarra pizarra;
+    private PizarraContainer pizarracont;
     private Barra barra;
    
     private MenuBar menu; 
@@ -25,10 +25,10 @@ public class Window extends JFrame {
     //super(null);
     
     public Window() throws IOException{
-       
-        menu = new MenuBar(this);        
+        pizarracont = new PizarraContainer();
+        menu = new MenuBar(this, pizarracont);        
         barra = new Barra(this);
-        pizarra = new Pizarra();
+        
         
         //this.setLocationRelativeTo(null);
         this.setLayout(new BorderLayout());
@@ -44,11 +44,14 @@ public class Window extends JFrame {
                                
         //this.add(menu,BorderLayout.NORTH);
         this.add(barra, BorderLayout.WEST);
-        this.add(pizarra, BorderLayout.EAST);
+        this.add(pizarracont, BorderLayout.EAST);
                 
         this.setVisible(true);
         
         
+    }
+    public PizarraContainer getPiz(){
+        return pizarracont;
     }
 }
 
