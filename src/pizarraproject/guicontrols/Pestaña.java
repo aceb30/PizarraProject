@@ -6,12 +6,12 @@ import java.util.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-public class PizarraMananger extends JTabbedPane{
+public class Pestaña extends JTabbedPane{
     
     private ArrayList<Pizarra> pizarras;
     private ArrayList<String> names;
     private int index;
-    public PizarraMananger() throws IOException{
+    public Pestaña() throws IOException{
         pizarras = new ArrayList<Pizarra>();
         names = new ArrayList<String>();
         AddPizarra("Pizarra Nueva");

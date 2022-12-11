@@ -28,7 +28,7 @@ public class BotonesColores extends JPanel{
         
         blackButton = new JButton();
         blackButton.setFocusable(false);
-        blackButton.setBounds(25,15,30,30);
+        blackButton.setBounds(35,15,30,30);
         blackButton.setBackground(Color.BLACK);
         
         blackButton.setBorder(gBorder);
@@ -44,7 +44,7 @@ public class BotonesColores extends JPanel{
         
         redButton = new JButton();
         redButton.setFocusable(false);
-        redButton.setBounds(55,15,30,30);
+        redButton.setBounds(75,15,30,30);
         redButton.setBackground(Color.RED);                        
         
         redButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -58,7 +58,7 @@ public class BotonesColores extends JPanel{
         
         magentaButton = new JButton();
         magentaButton.setFocusable(false);
-        magentaButton.setBounds(95, 15, 30, 30);
+        magentaButton.setBounds(115, 15, 30, 30);
         magentaButton.setBackground(Color.MAGENTA);
         
         magentaButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -73,7 +73,7 @@ public class BotonesColores extends JPanel{
         
         yellowButton = new JButton();
         yellowButton.setFocusable(false);
-        yellowButton.setBounds(15,55,30,30);
+        yellowButton.setBounds(35,55,30,30);
         yellowButton.setBackground(Color.YELLOW);
         
         yellowButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -87,7 +87,7 @@ public class BotonesColores extends JPanel{
         
         grayButton = new JButton();
         grayButton.setFocusable(false);
-        grayButton.setBounds(55, 55, 30, 30);
+        grayButton.setBounds(75, 55, 30, 30);
         grayButton.setBackground(Color.GRAY);
         
         grayButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -101,7 +101,7 @@ public class BotonesColores extends JPanel{
         
         orangeButton = new JButton();
         orangeButton.setFocusable(false);
-        orangeButton.setBounds(95, 55, 30, 30);
+        orangeButton.setBounds(115, 55, 30, 30);
         orangeButton.setBackground(Color.ORANGE);
         
         orangeButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -119,8 +119,7 @@ public class BotonesColores extends JPanel{
         color.add(magentaButton);
         color.add(yellowButton);       
         color.add(orangeButton); 
-    
-    
+        
     }
     
     public void setColor(){

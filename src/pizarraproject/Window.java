@@ -4,6 +4,7 @@ import pizarraproject.guicontrols.MenuBar;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -34,6 +35,7 @@ public class Window extends JFrame {
         
         this.setTitle("Pizarra Project");
         this.setSize(1300, 700);
+        this.setMinimumSize(new Dimension(1000, 600));
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //this.setResizable(false);
         
