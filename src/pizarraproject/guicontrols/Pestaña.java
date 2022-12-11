@@ -35,6 +35,10 @@ public class Pestaña extends JTabbedPane{
         return index;
     }
     
+    public Pizarra getPizarra(int i){
+        return pizarras.get(i);
+    }
+    
   ChangeListener changeListener = new ChangeListener() {
         public void stateChanged(ChangeEvent changeEvent) {
         JTabbedPane sourceTabbedPane = (JTabbedPane) changeEvent.getSource();
