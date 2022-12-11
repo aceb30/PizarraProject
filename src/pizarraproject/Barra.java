@@ -1,5 +1,5 @@
 package pizarraproject;
-import GUIControls.*;
+import pizarraproject.guicontrols.Mode;
 
 import java.awt.*;
 import javax.swing.*;

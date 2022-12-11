@@ -1,7 +1,7 @@
 
 package pizarraproject;
 
-import GUIControls.BotonesEditar;
+import pizarraproject.guicontrols.BotonesEditar;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

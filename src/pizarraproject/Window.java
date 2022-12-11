@@ -1,6 +1,6 @@
 
 package pizarraproject;
-import GUIControls.*;
+import pizarraproject.guicontrols.MenuBar;
 
 import java.awt.BorderLayout;
 import java.awt.Color;

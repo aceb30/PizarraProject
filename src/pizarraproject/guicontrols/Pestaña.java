@@ -1,5 +1,5 @@
 
-package GUIControls;
+package pizarraproject.guicontrols;
 import java.io.IOException;
 import pizarraproject.*;
 import javax.swing.*;

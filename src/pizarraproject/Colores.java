@@ -1,6 +1,6 @@
 package pizarraproject;
 
-import GUIControls.BotonesColores;
+import pizarraproject.guicontrols.BotonesColores;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

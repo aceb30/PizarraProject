@@ -1,5 +1,5 @@
 package pizarraproject;
-import GUIControls.*;
+import pizarraproject.guicontrols.Pestaña;
 import java.awt.BorderLayout;
 import java.io.IOException;
 import javax.swing.*;

@@ -1,6 +1,6 @@
 package pizarraproject;
 
-import GUIControls.BotonesBorrar;
+import pizarraproject.guicontrols.BotonesBorrar;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
