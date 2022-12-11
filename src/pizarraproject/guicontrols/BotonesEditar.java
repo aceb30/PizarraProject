@@ -213,7 +213,7 @@ public class BotonesEditar {
         penc.setBackground(Color.GRAY);
         move.setBackground(Color.GRAY);
         undo.setBackground(Color.GRAY);
-        
+        redo.setBackground(Color.GRAY);
     }
 }
 

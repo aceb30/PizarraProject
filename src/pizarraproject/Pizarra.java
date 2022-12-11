@@ -91,7 +91,6 @@ public class Pizarra extends JPanel {
         }
     }
     
-
     @Override
     public void paint(Graphics g) {
         super.paint(g);
@@ -119,10 +118,19 @@ public class Pizarra extends JPanel {
     }
     
     public void restore(){
-        curr=save;
+        if (save!=null) {
+            curr=save;
         drawn.add(curr);             
         repaint();      
         System.out.println("redo");
+        }else
+            System.out.println("Save is Null");
+        
+    }
+    public void clear(){
+        drawn.clear();
+        curr=null;
+        repaint();
     }
     
 /*
