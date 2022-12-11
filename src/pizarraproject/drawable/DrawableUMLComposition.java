@@ -15,5 +15,6 @@ public class DrawableUMLComposition extends DrawableUMLLine {
     @Override
     public void paint(Graphics g) {
         drawArrowLine(g, x1, y1, x2, y2, 10, 10, false, false);
+        g.fillOval(x1 -2, y1 - 2, 5, 5);
     }
 }
