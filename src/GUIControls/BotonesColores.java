@@ -15,7 +15,7 @@ public class BotonesColores {
     private JButton orangeButton;
     private Colores colores;
     
-    public void BotonesColores(Colores c){
+    public BotonesColores(Colores c){
         
         colores = c;
         

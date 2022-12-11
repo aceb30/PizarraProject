@@ -17,7 +17,7 @@ public class Colores extends JPanel{
         this.setPreferredSize(new Dimension(300, 300));
         this.setBackground(Color.YELLOW);
         
-        //bottones = new BotonesColores(this);
+        bottones = new BotonesColores(this);
         
         
     
