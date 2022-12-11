@@ -70,8 +70,7 @@ public class BotonesEditar {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                System.out.println("Composition mode");
                setColor();
-               comp.setBackground(Color.GREEN); 
-               Pizarra.remove();
+               comp.setBackground(Color.GREEN);                
             }
         });
         
@@ -166,9 +165,10 @@ public class BotonesEditar {
         undo.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-               System.out.println("Undo");
-               setColor();
-               undo.setBackground(Color.GREEN);               
+                System.out.println("Undo");
+                setColor();
+                undo.setBackground(Color.GREEN);
+                Pestaña.undo();               
             }
         });
         

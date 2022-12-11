@@ -23,6 +23,10 @@ import pizarraproject.drawable.DrawableUMLLine;
 
 public class Pizarra extends JPanel {
 
+    public static Object get(int index) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     private JLabel label;
     private static int mode = 1;
     private static Color color;
@@ -36,8 +40,8 @@ public class Pizarra extends JPanel {
         this.addMouseMotionListener(listener);
     }
 
-    private static ArrayList<Drawable> drawn;
-    private static Drawable curr;
+    private ArrayList<Drawable> drawn;
+    private  Drawable curr;
 
     class Listener extends MouseInputAdapter {
 
@@ -104,8 +108,10 @@ public class Pizarra extends JPanel {
         color = c;
     }
     
-    public static void remove(){
+    public void remove(){
         drawn.remove(curr);
+        curr=null;
+        repaint();        
     }
     
 /*
