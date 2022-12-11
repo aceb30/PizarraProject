@@ -29,10 +29,10 @@ public class MenuBar extends JMenuBar {
         
         wind = w;
         mb = new JMenuBar();
-        file = new JMenu("Opciones");
-        load = new JMenuItem("Cargar");
-        save = new JMenuItem("Guardar PDF");
-        delete = new JMenuItem("Borrar Archivo");
+        //file = new JMenu("Opciones");
+        load = new JMenu("Cargar");
+        save = new JMenu("Guardar PDF");
+        delete = new JMenu("Borrar Archivo");
         
         addW = new JMenu("Nueva Pizarra");
         
@@ -63,18 +63,21 @@ public class MenuBar extends JMenuBar {
          delete.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
+               int index = cont.getPestaña().getIndex();
+               cont.getPestaña().DeletePizarra(index);
                System.out.println("Borrar");
             }
         });
                   
         w.setJMenuBar(mb);
         
-        mb.add(file);
+        //mb.add(file);
+        
         mb.add(addW);
         
-        file.add(load);
-        file.add(save);
-        file.add(delete);
+        mb.add(load);
+        mb.add(save);
+        mb.add(delete);
         
         //wind.add(mb);
         //wind.add(bar,BorderLayout.NORTH);                

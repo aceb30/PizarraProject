@@ -15,25 +15,32 @@ public class Mode extends JButton{
     JButton borrar;
     Barra barra;
     JPanel auxPanel;
+    JPanel sPanel;
     
     public Mode(Barra barraAux){
         
         //def = editar.get;
         barra = barraAux;
-        auxPanel= new JPanel();
-        //this.setPreferredSize(new Dimension(300, 500));
-        //this.setBackground(Color.MAGENTA);
         
+        auxPanel = new JPanel();
+        sPanel = new JPanel();
+        
+        //this.setPreferredSize(new Dimension(300, 500));
+        //this.setBackground(Color.MAGENTA);        
         //this.setLayout(new BorderLayout());
         
-        auxPanel.setPreferredSize(new Dimension(300,5));
-        auxPanel.setBackground(Color.BLACK);
+        auxPanel.setPreferredSize(new Dimension(300,10));
+        auxPanel.setBackground(Color.MAGENTA);
         barra.add(auxPanel,BorderLayout.NORTH);
+        
+        sPanel.setPreferredSize(new Dimension(300,10));
+        sPanel.setBackground(Color.MAGENTA);
+        
                 
-        editar = new JButton("Modo editar");
+        editar = new JButton("Editar");
         editar.setBackground(Color.GREEN);
-        editar.setPreferredSize(new Dimension(130,50));
-        //editar.setBounds(0, 0, 100, 100);        
+        editar.setPreferredSize(new Dimension(80,40));
+        //editar.setBounds(0, 0, 100, 200);        
         editar.setFocusable(false);
         //editar.addActionListener(this);          
 
@@ -48,12 +55,12 @@ public class Mode extends JButton{
                 System.out.println("Editar");
             }
         });
-        //editar.setBounds(0, 0, 150, 30);
+        
         barra.add(editar, BorderLayout.WEST);
                         
-        borrar = new JButton("Modo Borrar");
+        borrar = new JButton("Borrar");
         borrar.setBackground(Color.gray);
-        borrar.setPreferredSize(new Dimension(130,50));
+        borrar.setPreferredSize(new Dimension(80,40));
         
         //borrar.setBounds(0, 0, 100, 100);
         //borrar.setText("Modo Borrar");
@@ -73,6 +80,8 @@ public class Mode extends JButton{
         });
          
         barra.add(borrar, BorderLayout.EAST);
+        
+        barra.add(sPanel,BorderLayout.SOUTH);
     }
 
    

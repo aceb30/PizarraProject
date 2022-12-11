@@ -8,18 +8,18 @@ import javax.swing.*;
 
 public class Colores extends JPanel{
     
-    BotonesColores bottones;
+    BotonesColores botones;
     
     public Colores(){
         
-        this.setBounds(50, 20, 100, 100);
+        //this.setBounds(50, 20, 100, 100);
         this.setPreferredSize(new Dimension(300, 300));
-        this.setBackground(Color.YELLOW);
+        this.setBackground(Color.LIGHT_GRAY);
+
+        this.setLayout(null);
         
-        bottones = new BotonesColores(this);
-        
-        
-    
+        botones = new BotonesColores(this);
+ 
     }
     
     

@@ -21,6 +21,7 @@ public class Editar extends JPanel {
         
         this.setLayout(null);
         botones = new BotonesEditar(this, p);
+        
         this.revalidate();
         this.repaint();
     }

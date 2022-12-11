@@ -27,8 +27,7 @@ public class Window extends JFrame {
     public Window() throws IOException{
         pizarracont = new PizarraContainer();
         menu = new MenuBar(this, pizarracont);        
-        barra = new Barra(this, pizarracont);
-        
+        barra = new Barra(this, pizarracont);                        
         
         //this.setLocationRelativeTo(null);
         this.setLayout(new BorderLayout());
@@ -44,7 +43,7 @@ public class Window extends JFrame {
                                
         //this.add(menu,BorderLayout.NORTH);
         this.add(barra, BorderLayout.WEST);
-        this.add(pizarracont, BorderLayout.EAST);
+        this.add(pizarracont, BorderLayout.CENTER);
                 
         this.setVisible(true);
         

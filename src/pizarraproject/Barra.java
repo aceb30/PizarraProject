@@ -9,30 +9,26 @@ public class Barra extends JPanel{
     Mode modos;
     Editar barraEditar;
     Borrar barraBorrar;
-    Colores bColores;
+    Colores barraColores;
     Window ventana;
     
     //GridBagConstraints gbc;
     public Barra(Window window_aux, PizarraContainer p){
         
         ventana = window_aux;
-        //this.setLocale(null);
-        //this.setLayout(new BorderLayout());
-        //this.setLayout(new GridBagLayout());
-        //gbc = new GridBagConstraints();
 
-        this.setPreferredSize(new Dimension(300, 650));
+        this.setPreferredSize(new Dimension(300, 450));
         this.setBackground(Color.BLACK);
                 
         barraEditar = new Editar(p);
         barraBorrar = new Borrar();   
-        bColores = new Colores();
+        barraColores = new Colores();
         
         modos = new Mode(this);
         
         this.add(barraEditar, BorderLayout.SOUTH);
         this.add(barraBorrar, BorderLayout.SOUTH);
-        this.add(bColores, BorderLayout.SOUTH);
+        this.add(barraColores, BorderLayout.SOUTH);
                         
         barraEditar.setVisible(true);
         barraBorrar.setVisible(false);
