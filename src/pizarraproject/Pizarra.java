@@ -30,6 +30,7 @@ public class Pizarra extends JPanel {
     private JLabel label;
     private static int mode = 1;
     private static Color color;
+    public static Drawable save;
     public Pizarra() throws IOException {
         this.drawn = new ArrayList<Drawable>();
 
@@ -50,16 +51,17 @@ public class Pizarra extends JPanel {
         public void mousePressed(MouseEvent m) {
                         
             if (mode==1) {
-                curr = new DrawableUMLClass();  
+                curr = new DrawableUMLClass();                  
             }
             if (mode==2) {
-                curr = new DrawableLine();                
+                curr = new DrawableLine();                                
             }
             if (mode==3){
-                curr = new DrawableUMLLine();
+                curr = new DrawableUMLLine();                
             }
             curr.set_color(color);
             curr.set_origin(m.getX(), m.getY());
+            save=curr;
             repaint();
             
             System.out.println(mode);
@@ -73,6 +75,7 @@ public class Pizarra extends JPanel {
         @Override
         public void mouseReleased(MouseEvent me) {
             drawn.add(curr);
+            save=curr;
             repaint();
         }
 
@@ -112,6 +115,13 @@ public class Pizarra extends JPanel {
         drawn.remove(curr);
         curr=null;
         repaint();        
+    }
+    
+    public void restore(){
+        curr=save;
+        drawn.add(curr);             
+        repaint();      
+        System.out.println("redo");
     }
     
 /*

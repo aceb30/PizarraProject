@@ -186,7 +186,7 @@ public class BotonesEditar {
                 System.out.println("Undo");
                 setColor();
                 redo.setBackground(Color.GREEN);
-                //Pestaña.redo();               
+                Pestaña.redo();               
             }
         });
         
