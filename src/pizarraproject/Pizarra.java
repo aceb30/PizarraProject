@@ -20,6 +20,7 @@ import pizarraproject.drawable.Drawable;
 import pizarraproject.drawable.DrawableLine;
 import pizarraproject.drawable.DrawableUMLAssoc;
 import pizarraproject.drawable.DrawableUMLClass;
+import pizarraproject.drawable.DrawableUMLDepends;
 import pizarraproject.drawable.DrawableUMLGeneralization;
 import pizarraproject.drawable.DrawableUMLLine;
 
@@ -58,9 +59,12 @@ public class Pizarra extends JPanel {
             }
             if (mode==3){
                 curr = new DrawableUMLAssoc();
-            }
+            }            
             if (mode==5){
                 curr = new DrawableUMLGeneralization();
+            }
+            if(mode ==6){
+                curr = new DrawableUMLDepends();
             }
             curr.set_color(color);
             curr.set_origin(m.getX(), m.getY());            
@@ -113,8 +117,7 @@ public class Pizarra extends JPanel {
     
     public void remove(){
         if (drawn.size()!=0) {
-            save.add(drawn.remove(drawn.size()-1));
-            //drawn.remove(drawn.size()-1);        
+            save.add(drawn.remove(drawn.size()-1));                
             curr=null;
             repaint();        
         }else

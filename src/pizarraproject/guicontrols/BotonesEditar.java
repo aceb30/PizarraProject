@@ -104,7 +104,8 @@ public class BotonesEditar {
             public void mouseClicked(java.awt.event.MouseEvent evt) {               
                 System.out.println("Depende mode");               
                 setColor();
-                depe.setBackground(Color.GREEN);               
+                depe.setBackground(Color.GREEN);    
+                Pizarra.setMode(6);
             }
         });
         
