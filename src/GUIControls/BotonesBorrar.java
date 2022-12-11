@@ -17,10 +17,7 @@ public class BotonesBorrar extends JPanel{
         
         borrar = b;
         
-        setLayout(new GridBagLayout());
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.gridwidth = GridBagConstraints.REMAINDER;
-        gbc.fill = GridBagConstraints.HORIZONTAL;
+        
         
         object = new JButton("Objeto");
         object.setFocusable(false);
@@ -33,8 +30,8 @@ public class BotonesBorrar extends JPanel{
                System.out.println("Object");
                setColor();
                object.setBackground(Color.cyan);
-               object.setBorder(new LineBorder(Color.GREEN));
-               add(object, gbc);
+               //object.setBorder(new LineBorder(Color.GREEN));
+               //add(object, gbc);
             }
         });
         

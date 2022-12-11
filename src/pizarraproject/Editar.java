@@ -21,12 +21,7 @@ public class Editar extends JPanel {
         
         this.setLayout(null);
         botones = new BotonesEditar(this, p);
-<<<<<<< Updated upstream
-=======
-
-                
         
->>>>>>> Stashed changes
         this.revalidate();
         this.repaint();
     }
