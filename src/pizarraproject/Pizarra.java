@@ -24,6 +24,8 @@ import pizarraproject.drawable.DrawableUMLLine;
 public class Pizarra extends JPanel {
 
     private JLabel label;
+    private static int mode = 1;
+    private static Color color;
     public Pizarra() throws IOException {
         this.drawn = new ArrayList<Drawable>();
 
@@ -41,10 +43,20 @@ public class Pizarra extends JPanel {
     class Listener extends MouseInputAdapter {
 
         @Override
+        
         public void mousePressed(MouseEvent m) {
-            curr = new DrawableUMLClass();
+                        
+            if (mode==1) {
+                curr = new DrawableUMLClass();  
+            }
+            if (mode==2) {
+                curr = new DrawableLine();                
+            }
+            curr.set_color(color);
             curr.set_origin(m.getX(), m.getY());
             repaint();
+            
+            System.out.println(mode);
         }
 
         public void mouseDragged(MouseEvent m) {
@@ -80,6 +92,15 @@ public class Pizarra extends JPanel {
             curr.paint(g);
         }
     }
+    
+    public static void setMode(int m) {
+        mode = m;
+    }
+    
+    public static void setColor(Color c) {
+        color = c;
+    }
+    
 /*
     private interface Drawn {
         public void paint(Graphics g);

@@ -5,13 +5,15 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import pizarraproject.*;
+import pizarraproject.drawable.Drawable;
+import pizarraproject.drawable.DrawableLine;
 
 public class BotonesColores extends JPanel{
 
     private JButton redButton;
     private JButton magentaButton;
     private JButton yellowButton;
-    private JButton grayButton;
+    private JButton blueButton;
     private JButton blackButton;
     private JButton orangeButton;
 
@@ -37,8 +39,9 @@ public class BotonesColores extends JPanel{
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {               
                 System.out.println("Black");               
-                setColor();
-                blackButton.setBorder(gBorder);                
+                cleanColor();
+                blackButton.setBorder(gBorder); 
+                Pizarra.setColor(Color.BLACK);
             }
         });
         
@@ -50,9 +53,10 @@ public class BotonesColores extends JPanel{
         redButton.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-               System.out.println("Red");
-               setColor();
-               redButton.setBorder(gBorder);               
+                System.out.println("Red");
+                cleanColor();
+                redButton.setBorder(gBorder);
+                Pizarra.setColor(Color.RED);             
             }
         });
         
@@ -65,8 +69,9 @@ public class BotonesColores extends JPanel{
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                System.out.println("Magneta");
-               setColor();
-               magentaButton.setBorder(gBorder);              
+               cleanColor();
+               magentaButton.setBorder(gBorder);
+               Pizarra.setColor(Color.MAGENTA);
             }
         });
         
@@ -80,22 +85,24 @@ public class BotonesColores extends JPanel{
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                System.out.println("Yellow");
-               setColor();
+               cleanColor();
                yellowButton.setBorder(gBorder);             
+               Pizarra.setColor(Color.YELLOW);
             }
         });
         
-        grayButton = new JButton();
-        grayButton.setFocusable(false);
-        grayButton.setBounds(75, 55, 30, 30);
-        grayButton.setBackground(Color.GRAY);
+        blueButton = new JButton();
+        blueButton.setFocusable(false);
+        blueButton.setBounds(75, 55, 30, 30);
+        blueButton.setBackground(Color.BLUE);
         
-        grayButton.addMouseListener(new java.awt.event.MouseAdapter() {
+        blueButton.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-               System.out.println("Gray");
-               setColor();
-               grayButton.setBorder(gBorder);               
+                System.out.println("Blue");
+                cleanColor();
+                blueButton.setBorder(gBorder);
+                Pizarra.setColor(Color.BLUE);
             }
         });                
         
@@ -108,28 +115,29 @@ public class BotonesColores extends JPanel{
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                System.out.println("Orange");
-               setColor();
-               orangeButton.setBorder(gBorder);               
+               cleanColor();
+               orangeButton.setBorder(gBorder);
+               Pizarra.setColor(Color.ORANGE);
             }
         });
         
         color.add(blackButton);
         color.add(redButton);
-        color.add(grayButton);
+        color.add(blueButton);
         color.add(magentaButton);
         color.add(yellowButton);       
         color.add(orangeButton); 
         
     }
     
-    public void setColor(){
+    public void cleanColor(){
         
         redButton.setBorder(lBorder);
         magentaButton.setBorder(lBorder);
         yellowButton.setBorder(lBorder);
         blackButton.setBorder(lBorder);
         orangeButton.setBorder(lBorder);
-        grayButton.setBorder(lBorder);
+        blueButton.setBorder(lBorder);
         
     }
     
