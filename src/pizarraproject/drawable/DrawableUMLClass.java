@@ -43,28 +43,4 @@ public class DrawableUMLClass implements Drawable {
     public Color get_color() {
         return new Color(0,0,0);
     }
-
-    int get_bind_x(int which) {
-        switch(which) {
-            case 0:
-            case 2:
-                return x + w/2;
-            case 1:
-            case 3:
-                return x + w;
-        }
-        return 0;
-    }
-
-    int get_bind_y(int which) {
-        switch(which) {
-            case 1:
-            case 3:
-                return y + h/2;
-            case 0:
-            case 2:
-                return y + h;
-        }
-        return 0;
-    }
 }

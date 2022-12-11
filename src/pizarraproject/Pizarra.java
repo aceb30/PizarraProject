@@ -18,6 +18,7 @@ import javax.swing.JPanel;
 import javax.swing.event.MouseInputAdapter;
 import pizarraproject.drawable.Drawable;
 import pizarraproject.drawable.DrawableLine;
+import pizarraproject.drawable.DrawableUMLAssoc;
 import pizarraproject.drawable.DrawableUMLClass;
 import pizarraproject.drawable.DrawableUMLLine;
 
@@ -56,7 +57,7 @@ public class Pizarra extends JPanel {
                 curr = new DrawableLine();                
             }
             if (mode==3){
-                curr = new DrawableUMLLine();
+                curr = new DrawableUMLAssoc();
             }
             curr.set_color(color);
             curr.set_origin(m.getX(), m.getY());
