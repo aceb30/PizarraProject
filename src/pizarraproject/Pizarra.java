@@ -19,6 +19,7 @@ import javax.swing.event.MouseInputAdapter;
 import pizarraproject.drawable.Drawable;
 import pizarraproject.drawable.DrawableLine;
 import pizarraproject.drawable.DrawableUMLClass;
+import pizarraproject.drawable.DrawableUMLLine;
 
 public class Pizarra extends JPanel {
 
