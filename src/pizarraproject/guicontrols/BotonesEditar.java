@@ -158,7 +158,7 @@ public class BotonesEditar {
         
         undo = new JButton();
         undo.setFocusable(false);
-        undo.setBounds(65,130,50,50);
+        undo.setBounds(120,130,50,50);
         undo.setBackground(Color.GRAY);
         ImageIcon undoIcon = new ImageIcon("undo.png");
         undo.setIcon(undoIcon);
