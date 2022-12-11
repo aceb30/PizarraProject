@@ -43,4 +43,9 @@ public class DrawableLine implements Drawable {
         pixels.add(new Point(x, y));
     }
 
+    @Override
+    public void set_origin(int x, int y) {
+        
+    }
+
 }

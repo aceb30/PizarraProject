@@ -18,6 +18,7 @@ import javax.swing.JPanel;
 import javax.swing.event.MouseInputAdapter;
 import pizarraproject.drawable.Drawable;
 import pizarraproject.drawable.DrawableLine;
+import pizarraproject.drawable.DrawableUMLClass;
 
 public class Pizarra extends JPanel {
 
@@ -40,8 +41,8 @@ public class Pizarra extends JPanel {
 
         @Override
         public void mousePressed(MouseEvent m) {
-            curr = new DrawableLine();
-            curr.update_from_pos(m.getX(), m.getY());
+            curr = new DrawableUMLClass();
+            curr.set_origin(m.getX(), m.getY());
             repaint();
         }
 
