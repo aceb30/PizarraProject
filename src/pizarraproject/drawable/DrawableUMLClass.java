@@ -41,5 +41,6 @@ public class DrawableUMLClass implements Drawable {
 
     @Override
     public Color get_color() {
+        return Color(0,0,0);
     }
 }
