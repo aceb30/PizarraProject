@@ -30,11 +30,11 @@ public class Mode extends JButton{
         //this.setLayout(new BorderLayout());
         
         auxPanel.setPreferredSize(new Dimension(300,10));
-        auxPanel.setBackground(Color.MAGENTA);
+        auxPanel.setBackground(Color.LIGHT_GRAY);
         barra.add(auxPanel,BorderLayout.NORTH);
         
         sPanel.setPreferredSize(new Dimension(300,10));
-        sPanel.setBackground(Color.MAGENTA);
+        sPanel.setBackground(Color.LIGHT_GRAY);
         
                 
         editar = new JButton("Editar");

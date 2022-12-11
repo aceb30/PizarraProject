@@ -35,7 +35,7 @@ public class BotonesBorrar extends JPanel{
         all = new JButton();
         all.setFocusable(false);
         all.setBounds(65, 10, 50, 50);
-        all.setBackground(Color.LIGHT_GRAY);
+        all.setBackground(Color.GRAY);
         ImageIcon allIcon = new ImageIcon("all.png");
         all.setIcon(allIcon);
         all.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -53,8 +53,8 @@ public class BotonesBorrar extends JPanel{
     
     public void setColor(){
     
-        all.setBackground(Color.LIGHT_GRAY);
-        object.setBackground(Color.LIGHT_GRAY);        
+        all.setBackground(Color.GRAY);
+        object.setBackground(Color.GRAY);        
         
     }
 }
