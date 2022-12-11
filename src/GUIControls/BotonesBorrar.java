@@ -15,9 +15,7 @@ public class BotonesBorrar extends JPanel{
     
     public BotonesBorrar(Borrar b){
         
-        borrar = b;
-        
-        
+        borrar = b;                
         
         object = new JButton("Objeto");
         object.setFocusable(false);

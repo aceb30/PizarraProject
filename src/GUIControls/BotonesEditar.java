@@ -22,7 +22,7 @@ public class BotonesEditar {
                 
         diagram = new JButton("Clase");
         diagram.setFocusable(false);
-        diagram.setBounds(0, 0, 100, 100);
+        diagram.setBounds(10, 10,50, 50);
         diagram.setBackground(Color.GREEN);
         
         diagram.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -34,44 +34,50 @@ public class BotonesEditar {
             }
         });
         
-        asoc = new JButton("Asociación");
+        asoc = new JButton();
         asoc.setFocusable(false);
-        asoc.setBounds(100, 0, 100, 100);
+        asoc.setBounds(65, 10, 50, 50);
         asoc.setBackground(Color.LIGHT_GRAY);
+        ImageIcon asocIcon = new ImageIcon("Asso.png");
+        asoc.setIcon(asocIcon);
         
         asoc.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-               System.out.println("Line mode");
+               System.out.println("Asso mode");
                setColor();
                asoc.setBackground(Color.GREEN);               
             }
         });
         
         
-        comp = new JButton("Composición");
+        comp = new JButton();
         comp.setFocusable(false);
-        comp.setBounds(200, 0, 100, 100);
+        comp.setBounds(120,10,50,50);
         comp.setBackground(Color.LIGHT_GRAY);
+        ImageIcon compIcon = new ImageIcon("Comp.png");
+        comp.setIcon(compIcon);
         
         comp.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-               System.out.println("Comps mode");
+               System.out.println("Composition mode");
                setColor();
                comp.setBackground(Color.GREEN);               
             }
         });
         
-        gene = new JButton("Generalización");
+        gene = new JButton();
         gene.setFocusable(false);
-        gene.setBounds(0, 100, 100, 100);
+        gene.setBounds(10, 70, 50, 50);
         gene.setBackground(Color.LIGHT_GRAY);
+        ImageIcon geneIcon = new ImageIcon("gene.png");
+        gene.setIcon(geneIcon);
         
         gene.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-               System.out.println("Other mode");
+               System.out.println("Generelization mode");
                setColor();
                gene.setBackground(Color.GREEN);               
             }
