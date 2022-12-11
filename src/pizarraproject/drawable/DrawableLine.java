@@ -16,7 +16,7 @@ public class DrawableLine implements Drawable {
 
     public DrawableLine() {
         pixels = new ArrayList<Point>();
-        color = new Color(0, 0, 0);
+        color = new Color(0,0,0);
     }
 
     @Override
@@ -44,8 +44,8 @@ public class DrawableLine implements Drawable {
         
     }
 
-    public void set_color(Color color) {
-        this.color=color;
+    public  void set_color(Color color) {
+        this.color=color;        
     }
 
     @Override

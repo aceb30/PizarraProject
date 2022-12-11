@@ -35,7 +35,7 @@ public class BotonesEditar {
                System.out.println("Digram mode");
                setColor();
                diagram.setBackground(Color.GREEN);
-               Pizarra.setColor(1);
+               Pizarra.setMode(1);
             }
         });
         
@@ -133,7 +133,7 @@ public class BotonesEditar {
                System.out.println("Pencil mode");
                setColor();
                penc.setBackground(Color.GREEN); 
-               Pizarra.setColor(2);
+               Pizarra.setMode(2);
             }
         });
         

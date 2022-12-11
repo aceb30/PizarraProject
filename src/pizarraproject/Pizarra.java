@@ -24,6 +24,7 @@ public class Pizarra extends JPanel {
 
     private JLabel label;
     private static int mode = 1;
+    private static Color color;
     public Pizarra() throws IOException {
         this.drawn = new ArrayList<Drawable>();
 
@@ -48,9 +49,9 @@ public class Pizarra extends JPanel {
                 curr = new DrawableUMLClass();  
             }
             if (mode==2) {
-                curr = new DrawableLine();
+                curr = new DrawableLine();                
             }
-            
+            curr.set_color(color);
             curr.set_origin(m.getX(), m.getY());
             repaint();
             
@@ -91,8 +92,12 @@ public class Pizarra extends JPanel {
         }
     }
     
-    public static void setColor(int m) {
-        mode=m;
+    public static void setMode(int m) {
+        mode = m;
+    }
+    
+    public static void setColor(Color c) {
+        color = c;
     }
     
 /*

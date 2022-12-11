@@ -36,7 +36,7 @@ public class DrawableUMLClass implements Drawable {
     }
 
     @Override
-    public void set_color(Color color) {
+    public void set_color(Color color) {       
     }
 
     @Override
