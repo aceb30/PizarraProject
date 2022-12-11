@@ -16,6 +16,7 @@ public class BotonesEditar {
     private JButton text;
     private JButton penc;
     private JButton move;
+    private JButton undo;
     private Editar editar;
     
     public BotonesEditar(Editar b, PizarraContainer p){
@@ -51,7 +52,8 @@ public class BotonesEditar {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                System.out.println("Asso mode");
                setColor();
-               asoc.setBackground(Color.GREEN);               
+               asoc.setBackground(Color.GREEN); 
+               Pizarra.setMode(3);
             }
         });
         
@@ -154,6 +156,22 @@ public class BotonesEditar {
             }
         });
         
+        undo = new JButton();
+        undo.setFocusable(false);
+        undo.setBounds(65,130,50,50);
+        undo.setBackground(Color.GRAY);
+        ImageIcon undoIcon = new ImageIcon("undo.png");
+        undo.setIcon(undoIcon);
+        
+        undo.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+               System.out.println("Undo");
+               setColor();
+               undo.setBackground(Color.GREEN);               
+            }
+        });
+        
         editar.add(asoc);
         editar.add(diagram);
         editar.add(comp);
@@ -162,6 +180,7 @@ public class BotonesEditar {
         editar.add(text); 
         editar.add(penc);
         editar.add(move);
+        editar.add(undo);
     }
     
     public void setColor(){
@@ -174,6 +193,7 @@ public class BotonesEditar {
         text.setBackground(Color.GRAY);
         penc.setBackground(Color.GRAY);
         move.setBackground(Color.GRAY);
+        undo.setBackground(Color.GRAY);
         
     }
 }

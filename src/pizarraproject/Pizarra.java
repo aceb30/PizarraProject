@@ -51,6 +51,9 @@ public class Pizarra extends JPanel {
             if (mode==2) {
                 curr = new DrawableLine();                
             }
+            if (mode==3){
+                curr = new DrawableUMLLine();
+            }
             curr.set_color(color);
             curr.set_origin(m.getX(), m.getY());
             repaint();
