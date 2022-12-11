@@ -16,12 +16,14 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.event.MouseInputAdapter;
+import pizarraproject.drawable.Drawable;
+import pizarraproject.drawable.DrawableLine;
 
 public class Pizarra extends JPanel {
 
     private JLabel label;
     public Pizarra() throws IOException {
-        this.drawn = new ArrayList<Drawn>();
+        this.drawn = new ArrayList<Drawable>();
 
         this.setPreferredSize(new Dimension(975, 600));
         this.setBackground(new Color(250, 250, 250));
@@ -31,27 +33,20 @@ public class Pizarra extends JPanel {
 
     }
 
-    private ArrayList<Drawn> drawn;
-    private Drawn curr;
+    private ArrayList<Drawable> drawn;
+    private Drawable curr;
 
     class Listener extends MouseInputAdapter {
 
         @Override
         public void mousePressed(MouseEvent m) {
-            curr = new Drawn();
-            curr.pixels.add(new Point(m.getX(), m.getY()));
+            curr = new DrawableLine();
+            curr.update_from_pos(m.getX(), m.getY());
             repaint();
         }
 
         public void mouseDragged(MouseEvent m) {
-            curr.pixels.add(new Point(m.getX(), m.getY()));
-            
-            Point before = curr.pixels.get(curr.pixels.size() - 1);
-            if(before != null) {
-                
-            }
-            
-            System.out.println("drag");
+            curr.update_from_pos(m.getX(), m.getY());
             repaint();
         }
 
@@ -77,33 +72,42 @@ public class Pizarra extends JPanel {
         super.paint(g);
 
         for (int i = 0; i < drawn.size(); i++) {
-            for (int j = 0; j < drawn.get(i).pixels.size(); j++) {
-                Point p = drawn.get(i).pixels.get(j);
-                g.drawLine(p.x, p.y, p.x, p.y);
-                try {Point before = drawn.get(i).pixels.get(j - 1); g.drawLine(before.x, before.y, p.x, p.y);}
-                catch (Exception e) {
-                    // lol, lmao
-                }
-            }
+            drawn.get(i).paint(g);
         }
         if (this.curr != null) {
-            for (int i = 0; i < this.curr.pixels.size(); i++) {
-                Point p = this.curr.pixels.get(i);
+            curr.paint(g);
+        }
+    }
+/*
+    private interface Drawn {
+        public void paint(Graphics g);
+        public void update_from_pos(int x, int y);
+    }
+    
+    private class DrawnPixels implements Drawn {
+
+        public DrawnPixels() {
+            pixels = new ArrayList<Point>();
+            color = new Color(0,0,0);
+        }
+
+        public void paint(Graphics g) {
+            for (int i = 0; i < this.pixels.size(); i++) {
+                Point p = this.pixels.get(i);
+                g.setColor(color);
                 g.drawLine(p.x, p.y, p.x, p.y);
-                try {Point before = this.curr.pixels.get(i - 1); g.drawLine(before.x, before.y, p.x, p.y);}
+                try {Point before = this.pixels.get(i - 1); g.drawLine(before.x, before.y, p.x, p.y);}
                 catch (Exception e) {
                     // lol, lmao
                 }
             }
         }
-    }
-
-    private static class Drawn {
-
-        public Drawn() {
-            pixels = new ArrayList<Point>();
-        }
-
         public ArrayList<Point> pixels;
-    }
+        public Color color;
+
+        @Override
+        public void update_from_pos(int x, int y) {
+            pixels.add(new Point(x, y));
+        }
+    }*/
 }
