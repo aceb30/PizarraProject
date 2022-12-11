@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package pizarraproject.drawable;
 
 import java.awt.Color;
@@ -43,4 +39,17 @@ public class DrawableLine implements Drawable {
         pixels.add(new Point(x, y));
     }
 
+    @Override
+    public void setColor(Color color) {
+        this.color=color;
+    }
+
+    @Override
+    public Color getColor() {
+        return this.color;
+    }
+    
+    
+    
+    
 }

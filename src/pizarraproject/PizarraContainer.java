@@ -1,19 +1,19 @@
 package pizarraproject;
-import pizarraproject.guicontrols.Pestaña;
+import pizarraproject.guicontrols.PizarraMananger;
 import java.awt.BorderLayout;
 import java.io.IOException;
 import javax.swing.*;
 
 public class PizarraContainer extends JPanel {
-    private Pestaña pestaña;
+    private PizarraMananger pestaña;
     public PizarraContainer() throws IOException{
         this.setLayout(new BorderLayout());
-        pestaña = new Pestaña();
+        pestaña = new PizarraMananger();
         this.add(pestaña, BorderLayout.CENTER);
         this.setVisible(true);
     }
     
-    public Pestaña getPestaña(){
+    public PizarraMananger getPestaña(){
         return pestaña;
     }
 }

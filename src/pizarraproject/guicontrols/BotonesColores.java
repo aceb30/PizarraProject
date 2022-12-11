@@ -28,7 +28,7 @@ public class BotonesColores extends JPanel{
         
         blackButton = new JButton();
         blackButton.setFocusable(false);
-        blackButton.setBounds(15,15,30,30);
+        blackButton.setBounds(25,15,30,30);
         blackButton.setBackground(Color.BLACK);
         
         blackButton.setBorder(gBorder);
@@ -38,7 +38,7 @@ public class BotonesColores extends JPanel{
             public void mouseClicked(java.awt.event.MouseEvent evt) {               
                 System.out.println("Black");               
                 setColor();
-                blackButton.setBorder(gBorder);             
+                blackButton.setBorder(gBorder);                
             }
         });
         

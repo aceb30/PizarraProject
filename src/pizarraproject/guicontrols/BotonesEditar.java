@@ -20,10 +20,12 @@ public class BotonesEditar {
         
         editar = b;                                
                 
-        diagram = new JButton("Clase");
+        diagram = new JButton();
         diagram.setFocusable(false);
         diagram.setBounds(10, 10,50, 50);
         diagram.setBackground(Color.GREEN);
+        ImageIcon diagIcon = new ImageIcon("diag.png");
+        diagram.setIcon(diagIcon);
         
         diagram.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
@@ -69,7 +71,7 @@ public class BotonesEditar {
         
         gene = new JButton();
         gene.setFocusable(false);
-        gene.setBounds(10, 70, 50, 50);
+        gene.setBounds(10,70,50,50);
         gene.setBackground(Color.LIGHT_GRAY);
         ImageIcon geneIcon = new ImageIcon("gene.png");
         gene.setIcon(geneIcon);
@@ -83,10 +85,12 @@ public class BotonesEditar {
             }
         });
         
-        depe = new JButton("Dependencia");
+        depe = new JButton();
         depe.setFocusable(false);
-        depe.setBounds(100,100, 100, 100);
+        depe.setBounds(65,70,50,50);
         depe.setBackground(Color.LIGHT_GRAY);
+        ImageIcon depeIcon = new ImageIcon("depe.png");
+        depe.setIcon(depeIcon);
         
         depe.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
@@ -97,15 +101,17 @@ public class BotonesEditar {
             }
         });
         
-        text = new JButton("Texto");
+        text = new JButton();
         text.setFocusable(false);
-        text.setBounds(200, 100, 100, 100);
+        text.setBounds(120,70,50,50);
         text.setBackground(Color.LIGHT_GRAY);
+        ImageIcon TIcon = new ImageIcon("T.png");
+        text.setIcon(TIcon);
         
         text.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-               System.out.println("Other mode");
+               System.out.println("Text mode");
                setColor();
                text.setBackground(Color.GREEN);               
             }

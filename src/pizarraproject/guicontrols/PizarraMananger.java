@@ -1,4 +1,3 @@
-
 package pizarraproject.guicontrols;
 import java.io.IOException;
 import pizarraproject.*;
@@ -7,16 +6,18 @@ import java.util.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-public class Pestaña extends JTabbedPane{
+public class PizarraMananger extends JTabbedPane{
+    
     private ArrayList<Pizarra> pizarras;
     private ArrayList<String> names;
     private int index;
-    public Pestaña() throws IOException{
+    public PizarraMananger() throws IOException{
         pizarras = new ArrayList<Pizarra>();
         names = new ArrayList<String>();
         AddPizarra("Pizarra Nueva");
         this.addChangeListener(changeListener);
     }
+    
     public void AddPizarra(String name) throws IOException{
         Pizarra aux = new Pizarra();
         pizarras.add(aux);
@@ -35,7 +36,7 @@ public class Pestaña extends JTabbedPane{
     }
     
   ChangeListener changeListener = new ChangeListener() {
-      public void stateChanged(ChangeEvent changeEvent) {
+        public void stateChanged(ChangeEvent changeEvent) {
         JTabbedPane sourceTabbedPane = (JTabbedPane) changeEvent.getSource();
         index = sourceTabbedPane.getSelectedIndex();
         System.out.println("Tab changed to: " + sourceTabbedPane.getTitleAt(index));
