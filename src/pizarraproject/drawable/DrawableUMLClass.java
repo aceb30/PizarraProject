@@ -4,6 +4,7 @@
  */
 package pizarraproject.drawable;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 /**
@@ -32,5 +33,13 @@ public class DrawableUMLClass implements Drawable {
     public void set_origin(int x, int y) {
         this.x = x;
         this.y = y;
+    }
+
+    @Override
+    public void set_color(Color color) {
+    }
+
+    @Override
+    public Color get_color() {
     }
 }
