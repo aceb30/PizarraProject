@@ -7,11 +7,19 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
+/**
+ *
+ * @author nwroot
+ */
 public class Editar extends JPanel {
     
     JButton prueba;
     BotonesEditar botones;
     
+    /**
+     * Constructor for Editar
+     * @param p The parent PizarraContainer
+     */
     public Editar(PizarraContainer p){
         
         this.setLocale(null);

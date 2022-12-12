@@ -1,9 +1,6 @@
-
 package pizarraproject.guicontrols;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -14,7 +11,10 @@ import pizarraproject.NewPizarra;
 import pizarraproject.Pizarra;
 import pizarraproject.PizarraContainer;
 
-
+/**
+ *
+ * @author nwroot
+ */
 public class MenuBar extends JMenuBar {
     
     private JMenuBar mb;
@@ -25,6 +25,11 @@ public class MenuBar extends JMenuBar {
     private JMenu addW;
     private JFrame wind;    
  
+    /**
+     * Create a MenuBar
+     * @param w Parent frame
+     * @param cont Parent PizarraContainer
+     */
     public MenuBar(JFrame w, PizarraContainer cont){
         
         w.setLayout(null);
@@ -87,23 +92,12 @@ public class MenuBar extends JMenuBar {
         });
                   
         w.setJMenuBar(mb);
-        
-        //mb.add(file);
-        
+
         mb.add(addW);
         
         mb.add(load);
         mb.add(save);
         mb.add(delete);
-        
-        //wind.add(mb);
-        //wind.add(bar,BorderLayout.NORTH);                
-                
-        //mb.setBackground(Color.red);                
-        
-        //this.add(bar,BorderLayout.NORTH);                
-        
-        
         
     }
 }

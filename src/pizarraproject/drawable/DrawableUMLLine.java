@@ -11,19 +11,47 @@ import java.awt.Graphics2D;
 import java.awt.Stroke;
 
 /**
- *
+ * Main UML Line
  * @author nwroot
  */
 public class DrawableUMLLine implements Drawable {
 
-    protected int x1, y1, x2, y2;
+    /**
+     * Origin X
+     */
+    protected int x1,
 
+    /**
+     * Origin Y
+     */
+    y1,
+
+    /**
+     * Destination X
+     */
+    x2,
+
+    /**
+     * Destination Y
+     */
+    y2;
+
+    /**
+     * Set the destination
+     * @param x
+     * @param y
+     */
     @Override
     public void update_from_pos(int x, int y) {
         this.x2 = x;
         this.y2 = y;
     }
 
+    /**
+     * Set the origin
+     * @param x
+     * @param y
+     */
     @Override
     public void set_origin(int x, int y) {
         this.x1 = x;
@@ -32,20 +60,44 @@ public class DrawableUMLLine implements Drawable {
         this.y2 = y;
     }
 
+    /**
+     * Set the line color. Unused
+     * @param color
+     */
     @Override
     public void set_color(Color color) {
     }
 
+    /**
+     * Get the line color. Unused
+     * @return
+     */
     @Override
     public Color get_color() {
         return null;
     }
 
+    /**
+     * Paint a simple line
+     * @param g
+     */
     @Override
     public void paint(Graphics g) {
         g.drawLine(x1, y1, x2, y2);
     }
 
+    /**
+     * Draw UML line with an arrow
+     * @param g Graphics
+     * @param x1 Origin X
+     * @param y1 Origin Y
+     * @param x2 Destination X
+     * @param y2 Destination Y
+     * @param d Arrow size
+     * @param h Arrow width
+     * @param fill Make a full triangle at the destination
+     * @param dotted Make a dotted line
+     */
     protected void drawArrowLine(Graphics g, int x1, int y1, int x2, int y2, int d, int h, boolean fill, boolean dotted) {
         int dx = x2 - x1, dy = y2 - y1;
         double D = Math.sqrt(dx * dx + dy * dy);

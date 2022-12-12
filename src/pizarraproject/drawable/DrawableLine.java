@@ -11,14 +11,21 @@ import java.util.ArrayList;
  */
 public class DrawableLine implements Drawable {
 
-    public ArrayList<Point> pixels;
-    public Color color;
+    private ArrayList<Point> pixels;
+    private Color color;
 
+    /**
+     * Make a free hand line
+     */
     public DrawableLine() {
-        pixels = new ArrayList<Point>();
+        pixels = new ArrayList<>();
         color = new Color(0,0,0);
     }
 
+    /**
+     * Paint the line to the screen
+     * @param g
+     */
     @Override
     public void paint(Graphics g) {
         for (int i = 0; i < this.pixels.size(); i++) {
@@ -34,20 +41,39 @@ public class DrawableLine implements Drawable {
         }
     }
 
+    /**
+     * Add a new point to the line
+     * @param x
+     * @param y
+     */
     @Override
     public void update_from_pos(int x, int y) {
         pixels.add(new Point(x, y));
     }
 
+    /**
+     * Set the line origin. Unused
+     * @param x
+     * @param y
+     */
     @Override
     public void set_origin(int x, int y) {
         
     }
 
-    public  void set_color(Color color) {
+    /**
+     * Set the line color
+     * @param color The color
+     */
+    @Override
+    public void set_color(Color color) {
         this.color=color;        
     }
 
+    /**
+     * Get the line color
+     * @return The color
+     */
     @Override
     public Color get_color() {
         return this.color;

@@ -1,17 +1,24 @@
-
 package pizarraproject;
+
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
 
-
+/**
+ *
+ * @author nwroot
+ */
 public class NewPizarra extends JFrame {
     private String name;
-    private boolean close = false;
+
+    /**
+     * Create a NewPizarra form
+     * @param frame Parent frame
+     * @param cont Parent container
+     */
     public NewPizarra(JFrame frame, PizarraContainer cont){
         //this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setTitle("Inserte nombre");
@@ -36,7 +43,6 @@ public class NewPizarra extends JFrame {
                 name = namer.getText();
                 try {
                     cont.getPestaña().AddPizarra(name);
-                    close = true;
                     dispose();
                 } catch (IOException ex) {
                     Logger.getLogger(NewPizarra.class.getName()).log(Level.SEVERE, null, ex);
@@ -50,7 +56,11 @@ public class NewPizarra extends JFrame {
         this.setVisible(true);
     }
 
-    
+    /**
+     * Getter for name
+     * @return name
+     */
+    @Override
     public String getName(){
         return name;
     }

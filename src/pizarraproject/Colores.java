@@ -6,10 +6,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
+/**
+ *
+ * @author nwroot
+ */
 public class Colores extends JPanel{
     
     BotonesColores botones;
     
+    /**
+     * Constructor for Colores
+     */
     public Colores(){
                 
         this.setPreferredSize(new Dimension(180, 300));

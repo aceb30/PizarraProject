@@ -6,10 +6,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
+/**
+ *
+ * @author nwroot
+ */
 public class Borrar extends JPanel{
     
     BotonesBorrar botones;
     
+    /**
+     * Constructor for Borrar
+     */
     public Borrar(){
         
         this.setBounds(50, 20, 100, 100);
@@ -23,14 +30,4 @@ public class Borrar extends JPanel{
         this.revalidate();
         this.repaint();
     }
-      
-   /*
-    @Override
-    public void actionPerformed(ActionEvent e) {
-         if(e.getSource()==prueba){
-            System.out.println("Prueba");
-        }
-    }
-*/
-    
 }

@@ -1,13 +1,13 @@
 package pizarraproject.guicontrols;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import pizarraproject.*;
-import pizarraproject.drawable.Drawable;
-import pizarraproject.drawable.DrawableLine;
 
+/**
+ * 
+ * @author nwroot
+ */
 public class BotonesColores extends JPanel{
 
     private JButton redButton;
@@ -21,6 +21,10 @@ public class BotonesColores extends JPanel{
     private LineBorder gBorder;
     private LineBorder lBorder;
     
+    /**
+     * Create a BotonesColores
+     * @param c Parent Colores
+     */
     public BotonesColores(Colores c){
         
         color = c;        
@@ -130,6 +134,9 @@ public class BotonesColores extends JPanel{
         
     }
     
+    /**
+     * Clear the colors
+     */
     public void cleanColor(){
         
         redButton.setBorder(lBorder);

@@ -6,6 +6,10 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import pizarraproject.*;
 
+/**
+ *
+ * @author nwroot
+ */
 public class BotonesEditar {
     
     private JButton diagram;
@@ -20,6 +24,11 @@ public class BotonesEditar {
     private JButton redo;
     private Editar editar;
     
+    /**
+     * Create a BotonesEditar
+     * @param b Parent Editar
+     * @param p Parent PizarraContainer
+     */
     public BotonesEditar(Editar b, PizarraContainer p){
         
         editar = b;                                
@@ -204,6 +213,9 @@ public class BotonesEditar {
         editar.add(redo);
     }
     
+    /**
+     * Set all the colors
+     */
     public void setColor(){
         
         asoc.setBackground(Color.GRAY);

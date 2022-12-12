@@ -1,17 +1,22 @@
 package pizarraproject.guicontrols;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.*;
-import javax.swing.border.LineBorder;
 import pizarraproject.*;
 
+/**
+ *
+ * @author nwroot
+ */
 public class BotonesBorrar extends JPanel{
     
     private JButton object;    
     private JButton all;
     private Borrar borrar;
     
+    /**
+     * Creates a BotonesBorrar
+     * @param b
+     */
     public BotonesBorrar(Borrar b){
         
         borrar = b;                
@@ -52,6 +57,9 @@ public class BotonesBorrar extends JPanel{
         borrar.add(all);
     }
     
+    /**
+     * Set the color to gray
+     */
     public void setColor(){
     
         all.setBackground(Color.GRAY);

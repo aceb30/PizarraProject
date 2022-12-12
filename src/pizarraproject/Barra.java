@@ -4,18 +4,25 @@ import pizarraproject.guicontrols.Mode;
 import java.awt.*;
 import javax.swing.*;
 
+/**
+ *
+ * @author nwroot
+ */
 public class Barra extends JPanel{
     
-    Mode modos;
     Editar barraEditar;
     Borrar barraBorrar;
     Colores barraColores;
-    Window ventana;
     
     //GridBagConstraints gbc;
+
+    /**
+     * Constructor for Barra 
+     * @param window_aux
+     * @param p
+     */
     public Barra(Window window_aux, PizarraContainer p){
         
-        ventana = window_aux;
 
         this.setPreferredSize(new Dimension(180, 450));
         this.setBackground(Color.LIGHT_GRAY);
@@ -24,7 +31,7 @@ public class Barra extends JPanel{
         barraBorrar = new Borrar();   
         barraColores = new Colores();
         
-        modos = new Mode(this);
+        new Mode(this);
         
         this.add(barraEditar, BorderLayout.SOUTH);
         this.add(barraBorrar, BorderLayout.SOUTH);
@@ -54,26 +61,21 @@ public class Barra extends JPanel{
         this.repaint
         */
     }
-    
-    /*
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if(e.getSource()==editar){
-            System.out.println("Modo Editar");
-            barraEditar.setVisible(true);
-            barraBorrar.setVisible(false);
-        }
-        if(e.getSource()==borrar){
-            System.out.println("Modo Borrar");
-            barraEditar.setVisible(false);
-            barraBorrar.setVisible(true);
-        }
-    }
-      */
+
+    /**
+     * Getter for BarraBorrar
+     * @return barraBorrar
+     */
+
     
     public Borrar getBorrar(){
         return barraBorrar;
     }
+
+    /**
+     * Getter for BarraEditar
+     * @return barraEditar
+     */
     public Editar getEditar(){
         return barraEditar;
     }

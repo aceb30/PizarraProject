@@ -3,16 +3,9 @@ package pizarraproject;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.Point;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.event.MouseInputAdapter;
@@ -22,20 +15,30 @@ import pizarraproject.drawable.DrawableUMLAssoc;
 import pizarraproject.drawable.DrawableUMLClass;
 import pizarraproject.drawable.DrawableUMLDepends;
 import pizarraproject.drawable.DrawableUMLGeneralization;
-import pizarraproject.drawable.DrawableUMLLine;
 
+/**
+ *
+ * @author nwroot
+ */
 public class Pizarra extends JPanel {
 
-    private JLabel label;
     private static int mode = 1;
     private static Color color;
+
+    /**
+     * Save buffer for undo/redo
+     */
     public static ArrayList<Drawable> save;
     private ArrayList<Drawable> drawn;
-    private  Drawable curr;
-    
+    private Drawable curr;
+
+    /**
+     * Creates a Pizarra
+     * @throws IOException
+     */
     public Pizarra() throws IOException {
-        this.drawn = new ArrayList<Drawable>();
-        save = new ArrayList<Drawable>();
+        this.drawn = new ArrayList<>();
+        save = new ArrayList<>();
 
         this.setPreferredSize(new Dimension(975, 600));
         this.setBackground(new Color(250, 250, 250));
@@ -43,36 +46,36 @@ public class Pizarra extends JPanel {
         this.addMouseListener(listener);
         this.addMouseMotionListener(listener);
     }
-    
 
     class Listener extends MouseInputAdapter {
 
         @Override
-        
+
         public void mousePressed(MouseEvent m) {
-                        
-            if (mode==1) {
-                curr = new DrawableUMLClass();                  
+
+            if (mode == 1) {
+                curr = new DrawableUMLClass();
             }
-            if (mode==2) {
-                curr = new DrawableLine();                                
+            if (mode == 2) {
+                curr = new DrawableLine();
             }
-            if (mode==3){
+            if (mode == 3) {
                 curr = new DrawableUMLAssoc();
-            }            
-            if (mode==5){
+            }
+            if (mode == 5) {
                 curr = new DrawableUMLGeneralization();
             }
-            if(mode ==6){
+            if (mode == 6) {
                 curr = new DrawableUMLDepends();
             }
             curr.set_color(color);
-            curr.set_origin(m.getX(), m.getY());            
+            curr.set_origin(m.getX(), m.getY());
             repaint();
-            
+
             System.out.println(mode);
         }
 
+        @Override
         public void mouseDragged(MouseEvent m) {
             curr.update_from_pos(m.getX(), m.getY());
             repaint();
@@ -80,7 +83,7 @@ public class Pizarra extends JPanel {
 
         @Override
         public void mouseReleased(MouseEvent me) {
-            drawn.add(curr);            
+            drawn.add(curr);
             repaint();
         }
 
@@ -94,7 +97,11 @@ public class Pizarra extends JPanel {
 
         }
     }
-    
+
+    /**
+     * Paint the Pizarra
+     * @param g Swing graphics
+     */
     @Override
     public void paint(Graphics g) {
         super.paint(g);
@@ -106,70 +113,57 @@ public class Pizarra extends JPanel {
             curr.paint(g);
         }
     }
-    
+
+    /**
+     * Setter for mode
+     * @param m mode
+     */
     public static void setMode(int m) {
         mode = m;
     }
-    
+
+    /**
+     * Setter for color
+     * @param c color
+     */
     public static void setColor(Color c) {
         color = c;
     }
-    
-    public void remove(){
-        if (drawn.size()!=0) {
-            save.add(drawn.remove(drawn.size()-1));                
-            curr=null;
-            repaint();        
-        }else
-            System.out.println("Drawn Null");        
+
+    /**
+     * Remove last drawn object
+     */
+    public void remove() {
+        if (!drawn.isEmpty()) {
+            save.add(drawn.remove(drawn.size() - 1));
+            curr = null;
+            repaint();
+        } else {
+            System.out.println("Drawn Null");
+        }
     }
-    
-    public void restore(){
-        if (save.size()!=0) {
-            curr=save.remove(save.size()-1);
-            drawn.add(curr);             
-            repaint();      
+
+    /**
+     * Restore last removed object
+     */
+    public void restore() {
+        if (!save.isEmpty()) {
+            curr = save.remove(save.size() - 1);
+            drawn.add(curr);
+            repaint();
             System.out.println("redo");
-        }else
+        } else {
             System.out.println("Save is Null");
-        
+        }
+
     }
-    public void clear(){
+
+    /**
+     * Clear the Pizarra
+     */
+    public void clear() {
         drawn.clear();
-        curr=null;
+        curr = null;
         repaint();
     }
-    
-/*
-    private interface Drawn {
-        public void paint(Graphics g);
-        public void update_from_pos(int x, int y);
-    }
-    
-    private class DrawnPixels implements Drawn {
-
-        public DrawnPixels() {
-            pixels = new ArrayList<Point>();
-            color = new Color(0,0,0);
-        }
-
-        public void paint(Graphics g) {
-            for (int i = 0; i < this.pixels.size(); i++) {
-                Point p = this.pixels.get(i);
-                g.setColor(color);
-                g.drawLine(p.x, p.y, p.x, p.y);
-                try {Point before = this.pixels.get(i - 1); g.drawLine(before.x, before.y, p.x, p.y);}
-                catch (Exception e) {
-                    // lol, lmao
-                }
-            }
-        }
-        public ArrayList<Point> pixels;
-        public Color color;
-
-        @Override
-        public void update_from_pos(int x, int y) {
-            pixels.add(new Point(x, y));
-        }
-    }*/
 }
