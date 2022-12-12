@@ -120,6 +120,7 @@ public class BotonesEditar {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                System.out.println("Text mode");
+               NewText nuevo = new NewText(p);
                setColor();
                text.setBackground(Color.GREEN);               
             }
