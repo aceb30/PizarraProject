@@ -15,7 +15,6 @@ public class DrawableLine implements Drawable {
     private Color color;
 
     /**
-     * Make a free hand line
      */
     public DrawableLine() {
         pixels = new ArrayList<>();

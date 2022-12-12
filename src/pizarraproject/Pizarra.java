@@ -131,7 +131,6 @@ public class Pizarra extends JPanel {
     }
 
     /**
-     * Remove last drawn object
      */
     public void remove() {
         if (!drawn.isEmpty()) {
@@ -144,7 +143,6 @@ public class Pizarra extends JPanel {
     }
 
     /**
-     * Restore last removed object
      */
     public void restore() {
         if (!save.isEmpty()) {
@@ -159,7 +157,6 @@ public class Pizarra extends JPanel {
     }
 
     /**
-     * Clear the Pizarra
      */
     public void clear() {
         drawn.clear();
