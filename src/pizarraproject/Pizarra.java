@@ -13,6 +13,7 @@ import pizarraproject.drawable.Drawable;
 import pizarraproject.drawable.DrawableLine;
 import pizarraproject.drawable.DrawableUMLAssoc;
 import pizarraproject.drawable.DrawableUMLClass;
+import pizarraproject.drawable.DrawableUMLComposition;
 import pizarraproject.drawable.DrawableUMLDepends;
 import pizarraproject.drawable.DrawableUMLGeneralization;
 
@@ -61,6 +62,9 @@ public class Pizarra extends JPanel {
             }
             if (mode == 3) {
                 curr = new DrawableUMLAssoc();
+            }
+            if (mode== 4){
+                curr = new DrawableUMLComposition();
             }
             if (mode == 5) {
                 curr = new DrawableUMLGeneralization();
